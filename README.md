@@ -29,8 +29,8 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-the-project">About the project</a></li>
-    <li><a href="#technical-requirements">Technical Requirements</a></li>
-    <li><a href="#non-technical-requirements">Non-technical requirements</a></li>
+    <li><a href="#user-stories">User Stories</a></li>
+    <li><a href="#planning">Planning</a></li>
   </ol>
 </details>
 
@@ -55,23 +55,28 @@ Use the `BLANK_README.md` to get started.
 
 
 <!-- GETTING STARTED -->
-## Technical Requirements
-### Built With
+# User stories
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+>As an user of the application I want the ability to send the SOS message even if I didn't have local internet connection. 
+>- End user goal: Send SOS message
+>- End business goal: Track where users are in a disaster scenario
+>- Acceptance criteria: Send Message, User receives confirmation, Message is sent to the cloud, Admin receives the information on the Dashboard
+>- Measurement of success: Admin receive the location of the user in a inhospitable scenario
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+>As an admin of the application I want to send confirmation messages to the users through the network. 
+>- End user goal:Send confirmation message
+>- End business goal: Notify users that their message was received
+>- Acceptance criteria: Admin sends confirmation, cloud send to the mininet, user receives confirmation
+>- Measurement of success: User receives message confirmation in a inhospitable scenario
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Non-technical requirements
+
+
+# Planning
+## Sprint planning
+All sprints are one week long. Sprint planning takes place at the beginning of the week.
+## Sprint review and Planning
+Sprint review and sprint retro occur at the end of each week when deliverables are sent to professors
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
