@@ -75,7 +75,7 @@ Use the `BLANK_README.md` to get started.
 # Planning
 ## Sprint planning
 All sprints are one week long. Sprint planning takes place at the beginning of the week.
-## Sprint review and Planning
+## Sprint review and retro
 Sprint review and sprint retro occur at the end of each week when deliverables are sent to professors
 
 
