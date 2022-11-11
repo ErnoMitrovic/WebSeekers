@@ -38,6 +38,16 @@
 
 <!-- ABOUT THE PROJECT -->
 # About The Project
+## Collaborators 
+- Caio Graca Gomes (ITA)
+- Ernesto Miranda Solís (TEC)
+- Henrique Fernandes Feitosa (ITA)
+- José Andrés Rodríguez Ruiz
+- Juan Antonio Mancera Velasco (TEC)
+- Owen Rosales Castro (TEC)
+- Tania Regina Ramírez Vázquez (TEC)
+- Thomas Neto (ITA)
+- Victoria Rodríguez de León (TEC)
 
 ## Collaboration
 This project is a global partnership between mexican students from [Tecnológico de Monterrey](https://www.tec.mx) and brazilian students from [Instituto Tecnológico de Aeronáutica](http://www.ita.br/) and aims to introduce them to the main IoT foundations. For ten weeks, it will be designed and implemented a digital system prototype that can obtain data through sensors, process their information, and present them on an internet platform for later analysis and visualization.
