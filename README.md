@@ -89,7 +89,7 @@ We will use virtual interfaces in the emulation environment to enable the real a
 >- Measurement of success: Admin receive the location of the user in an inhospitable scenario.
 
 >As an admin of the application I want to send confirmation messages to the users through the network. 
->- End user goal:Send confirmation message.
+>- End user goal: Send confirmation message.
 >- End business goal: Notify users that their message was received.
 >- Acceptance criteria: Admin sends confirmation, cloud send to the mininet, user receives confirmation.
 >- Measurement of success: User receives message confirmation in an inhospitable scenario
