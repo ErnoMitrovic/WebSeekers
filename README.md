@@ -42,11 +42,12 @@ Therefore, with the help of the international component, this course aims to dem
 
 ## Scenario
 
-Every year, disasters and crises devastate people, communities, and entire societies worldwide. Worryingly, they are predicted to become more common in the future. Disasters can occur naturally (e.g., tornadoes, hurricanes, earthquakes, floods, wildfires, mudslides, or drought) or be human-caused (e.g., mass shootings, chemical spills, or terrorist attacks). Preparing for, responding to, and recovering from disasters and traumatic events is essential to individuals’ and communities' behavioral health.
+A disaster is a sudden and unfortunate event that brings with it a great damage, loss, and destruction of local infrastructure. The WHO has defined it as "any sudden occurrence of events that cause damage, ecological disruption, loss of human life, deterioration of health and health services, on a scale sufficient to waeeant an extraordinary response from outside the affected community or area". 
 
-<p align="center" width="100%"><a name = "#itajai" href="https://www.youtube.com/embed/2RKeZk8qudA"><img src="https://img.youtube.com/vi/2RKeZk8qudA/0.jpg" alt="IoT Architecture" width="65%"></a></p>
+<p align="center" width="100%"><a name = "#itajai" href="https://youtu.be/9WIwlljva_s"><img src="https://i.ytimg.com/an_webp/9WIwlljva_s/mqdefault_6s.webp?du=3000&sqp=CPfDvJsG&rs=AOn4CLAby3Xmb_gnpJlLiM-_xn1z-9OJUw" alt="Disaster Management. Disasters: types and effects" width="65%"></a></p>
 
-Like war, disasters are also much unstructured in scope. No one can predict the exact time and how a disaster will strike. Sometimes the local infrastructure is devasted, and there are no telecommunication resources available to provide the essential communication necessities, for example, providing means to the affected communities asking for help. Usually, this type of situation requires a complete telecommunication infrastructure to provide Command and Control to support the operations.
+Consequently, disaster management is extremely important to suriveve in the case of a major unfortunate evenet (natural or man-made). Therefore, this important concept can ve defined as the organisation aspects of emergencies through the application of response and recovery in order to lessen the impact.
+For instance, if the local infrastructure is affected and there are no telecommunication resources, with a good disaster management, the essential communication resources coulde be provided in the response stage in order to supply a complete telecommunication infrastructure that provides Command and Control to support the operations.
 
 ## Solution
 
