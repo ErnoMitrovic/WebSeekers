@@ -25,34 +25,21 @@
 
 
 <!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="#about-the-project">About the project</a></li>
-    <li><a href="#user-stories">User Stories</a></li>
-    <li><a href="#planning">Planning</a></li>
-  </ol>
-</details>
-
-
+# 📝 Table of Contents
+<ol>
+  <li><a href="#about-the-project"> About the project </a></li>
+  <li><a href="#user-stories"> User Stories </a></li>
+  <li><a href="#planning"> Planning </a></li>
+  <li><a href="collaborators"> Collaborators </a></li>
+</ol>
 
 <!-- ABOUT THE PROJECT -->
-# About The Project
-## Collaborators 
-- Caio Graca Gomes (ITA)
-- Ernesto Miranda Solís (TEC)
-- Henrique Fernandes Feitosa (ITA)
-- José Andrés Rodríguez Ruiz (TEC)
-- Juan Antonio Mancera Velasco (TEC)
-- Owen Rosales Castro (TEC)
-- Tania Regina Ramírez Vázquez (TEC)
-- Thomas Neto (ITA)
-- Victoria Rodríguez de León (TEC) 
+# 🗂️ About The Project <a name = "about-the-project"></a>
 
 ## Collaboration
 This project is a global partnership between mexican students from [Tecnológico de Monterrey](https://www.tec.mx) and brazilian students from [Instituto Tecnológico de Aeronáutica](http://www.ita.br/) and aims to introduce them to the main IoT foundations. For ten weeks, it will be designed and implemented a digital system prototype that can obtain data through sensors, process their information, and present them on an internet platform for later analysis and visualization.
 
-## Scenario 
+## Scenario
 
 Every year, disasters and crises devastate people, communities, and entire societies worldwide. Worryingly, they are predicted to become more common in the future. Disasters can occur naturally (e.g., tornadoes, hurricanes, earthquakes, floods, wildfires, mudslides, or drought) or be human-caused (e.g., mass shootings, chemical spills, or terrorist attacks). Preparing for, responding to, and recovering from disasters and traumatic events is essential to individuals’ and communities' behavioral health.
 
@@ -80,7 +67,7 @@ We will use virtual interfaces in the emulation environment to enable the real a
 
 
 <!-- GETTING STARTED -->
-# User stories
+# 👥 User stories <a name = "user-stories"></a>
 
 >As an user of the application I want the ability to send the SOS message even if I didn't have local internet connection. 
 >- End user goal: Send SOS message.
@@ -101,12 +88,23 @@ We will use virtual interfaces in the emulation environment to enable the real a
 >- Measurement of success: Organization recieves the location of the user in an inhospitable scenario.
 
 
-# Planning
+# 📝 Planning <a name = "planning"></a>
 ## Sprint planning
 All sprints are one week long. Sprint planning takes place at the beginning of the week.
 ## Sprint review and retro
 Sprint review and sprint retro occur at the end of each week when deliverables are sent to professors.
 
+# 🤝🏻 Collaborators <a name = "collaborators"></a>
+### ITESM (Mexico) & ITA (Brazil)
+- Caio Graca Gomes              - (ITA)
+- Ernesto Miranda Solís         - (TEC)
+- Henrique Fernandes Feitosa    - (ITA)
+- José Andrés Rodríguez Ruiz    - (TEC)
+- Juan Antonio Mancera Velasco  - (TEC)
+- Owen Rosales Castro           - (TEC)
+- Tania Regina Ramírez Vázquez  - (TEC)
+- Thomas Neto                   - (ITA)
+- Victoria Rodríguez de León    - (TEC)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
