@@ -42,7 +42,7 @@
 - Caio Graca Gomes (ITA)
 - Ernesto Miranda Solís (TEC)
 - Henrique Fernandes Feitosa (ITA)
-- José Andrés Rodríguez Ruiz
+- José Andrés Rodríguez Ruiz (TEC)
 - Juan Antonio Mancera Velasco (TEC)
 - Owen Rosales Castro (TEC)
 - Tania Regina Ramírez Vázquez (TEC)
