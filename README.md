@@ -37,7 +37,8 @@
 # 🗂️ About The Project <a name = "about-the-project"></a>
 
 ## Collaboration
-This project is a global partnership between mexican students from [Tecnológico de Monterrey](https://www.tec.mx) and brazilian students from [Instituto Tecnológico de Aeronáutica](http://www.ita.br/) and aims to introduce them to the main IoT foundations. For ten weeks, it will be designed and implemented a digital system prototype that can obtain data through sensors, process their information, and present them on an internet platform for later analysis and visualization.
+Global Shared Learning: Classroom is an initiative that aims to link a course at the Tecnológico de Monterrey with a course at an associated international university, in this case the Instituto Tecnológico de Aeronáutica (ITA), through an international element, using technological tools to connect with others students, foster collaboration and facilitate learning in multicultural environments.
+Therefore, with the help of the international component, this course aims to demonstrate the main IoT foundations through the implementation of a digital system prototype that obtains data through sensors, processes it, and presents it on an Internet platform for later analysis and visualization.
 
 ## Scenario
 
