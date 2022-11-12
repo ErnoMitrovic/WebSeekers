@@ -58,11 +58,14 @@ For instance, in general, the victims of a disaster that have access to their sm
 
 <p align="center" width="100%"><a name = "#arch"><img src="https://www.gravoc.com/wp-content/uploads/2018/01/Drones-to-the-Rescue-How-Drones-Are-Helping-Disaster-Relief-Efforts-1080x343.png" width="65%"></a></p>
 
-There you can see two groups of nodes (emulated and real nodes). The real node is an [Android](https://developer.android.com/studio) device, which sends periodically (you need to define the period) MQTT messages to the Application Server through the bridge brokers existent in the emulation, informing the **severity and position** of the user. On the other hand, the emulated nodes are **Python scripts** with the same functionality as the real ones.
 
-There is an application server to provide the features to the Command-and-Control (C2) users. It is a real node that runs on a server box (Linux or Windows). This server has a Mosquitto broker, which receives all messages from the bridge ones and persists them in a SQL database. Also, it has a dashboard that organizes the data in a helpful format, presents the information in a map visualization, and calculates the Risk KPI (explained in the text).
+Using Iot concepts, the solution for this challenge is the following: there will be two groups of nodes, emulated and real ones. In this case, the user nodes will represent the sensor and the actuator stage. Likewise, regarding the real node, it will be a device which periodically sends MQTT messages to the application server through bridge brokers (Mosquitto) that exist in the emolution and that inform the severity level and position of a victim, or user. On the other hand, the emulated nodes are Python scripts that have the same functionality as the real ones. 
 
-We will use virtual interfaces in the emulation environment to enable the real and emulated nodes to exchange messages.
+Thereupon, an application server will provide the features to the Command-and-Control (C2) users. Consequently, the real node is the one that will run on a server box, in this case Linux. Therefore, a virtual interface will be used in the emulation environemnt to enable the real and emulated nodes to exchange messages.
+
+
+Moreover, it is worth mentioning that the server will have a Mosquitto borker, which will receive all the messages from the bridge ones and will store them in a SQL database, Finally, a dashboard will be implemented in order to provide a better visualization, by presenting the information, a map and an estimate of the Risk KPI.
+
 
 <p align="center" width="100%"><a name = "#detarch"><img src="https://connectivity-staging.s3.us-east-2.amazonaws.com/s3fs-public/inline-images/Node-Gateway-Cloud_Network.png" alt="Detailed Architecture" width="65%"></a></p>
 
