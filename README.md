@@ -64,7 +64,7 @@ There is an application server to provide the features to the Command-and-Contro
 
 We will use virtual interfaces in the emulation environment to enable the real and emulated nodes to exchange messages.
 
-<p align="center" width="100%"><a name = "#detarch"><img src="fig/detailed_arch.gif" alt="Detailed Architecture" width="65%"></a></p>
+<p align="center" width="100%"><a name = "#detarch"><img src="https://connectivity-staging.s3.us-east-2.amazonaws.com/s3fs-public/inline-images/Node-Gateway-Cloud_Network.png" alt="Detailed Architecture" width="65%"></a></p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
