@@ -8,7 +8,7 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-# Webseekers project
+# GSL IoT Project
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -28,7 +28,7 @@
 # 📝 Table of Contents
 <ol>
   <li><a href="#about-the-project"> About the project </a></li>
-  <li><a href="./USER_STORIES.md"> User Stories </a></li>
+  <li><a href="./USER_STORIES"> User Stories </a></li>
   <li><a href="#planning"> Planning </a></li>
   <li><a href="collaborators"> Collaborators </a></li>
 </ol>
