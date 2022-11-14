@@ -28,7 +28,7 @@
 # 📝 Table of Contents
 <ol>
   <li><a href="#about-the-project"> About the project </a></li>
-  <li><a href="./USER_STORIES"> User Stories </a></li>
+  <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/USER_STORIES.md" target="_blank"> User Stories </a></li>
   <li><a href="#planning"> Planning </a></li>
   <li><a href="collaborators"> Collaborators </a></li>
   <li><a href="https://github.com/users/ErnoMitrovic/projects/1"> Project </li>
