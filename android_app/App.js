@@ -2,14 +2,12 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable no-undef */
 /* @flow */
-import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import React, {Component} from 'react';
+import {View, Text, StyleSheet, TextInput} from 'react-native';
 
-import { Button } from '@rneui/base';
+import {Button} from '@rneui/base';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import init from 'react_native_mqtt';
-import pahoMqttMin from './paho.javascript-1.0.3/paho-mqtt-min';
--pahoMqttMin
 
 init({
   size: 10000,
@@ -32,9 +30,6 @@ class App extends Component {
       port: 0,
       severity: '',
     };
-    var client = null;
-    var connected = false;
-    const clientId = `python-mqtt-${Math.floor(Math.random() * 1000)}`
     // client.onConnectionLost = this.onConnectionLost;
     // client.onMessageArrived = this.onMessageArrived;
   }
@@ -51,19 +46,8 @@ class App extends Component {
     // TODO: subscribeTopic
   };
 
-  onConnect = () => {  
-    var connectionString = context.invocationContext.host + ":" + context.invocationContext.port + context.invocationContext.path;
-    logMessage("INFO", "Connection Success ", "[URI: ", connectionString, ", ID: ", context.invocationContext.clientId, "]");
-    var statusSpan = document.getElementById("connectionStatus");
-    statusSpan.innerHTML = "Connected to: " + connectionString + " as " + context.invocationContext.clientId;
-    connected = true;
-    setFormEnabledState(true);
-
-  };
-
-  onConnected = (reconnect, uri) => {
-    logMessage("INFO", "Client Has now connected: [Reconnected: ", reconnect, ", URI: ", uri, "]");
-    connected = true;
+  onConnect = () => {
+    // TODO: onConnect
   };
 
   onFailure = err => {
@@ -71,24 +55,7 @@ class App extends Component {
   };
 
   connect = () => {
-    client = new Paho.Client(ip, Number(port), clientId);
-    logMessage("INFO", "Connecting to Server: [Host: ", hostname, ", Port: ", port, ", ID: ", clientId, "]");
-
-    // set callback handlers
-    client.onConnectionLost = onConnectionLost;
-    client.onMessageArrived = onMessageArrived;
-    client.onConnected = onConnected;
-
-    var options = {
-      invocationContext: { host: hostname, port: port, clientId: clientId },
-      timeout: timeout,
-      keepAliveInterval: keepAlive,
-      cleanSession: cleanSession,
-      useSSL: tls,
-      reconnect: automaticReconnect,
-      onSuccess: onConnect,
-      onFailure: onFailure
-    };
+    // TODO: connect
   };
 
   unSubscribeTopic = () => {
@@ -107,7 +74,7 @@ class App extends Component {
           <TextInput
             style={styles.input}
             value={this.state.ip}
-            onChangeText={event => this.setState({ ip: event })}
+            onChangeText={event => this.setState({ip: event})}
           />
         </View>
         <View style={styles.connectContainer}>
@@ -115,7 +82,7 @@ class App extends Component {
           <TextInput
             style={styles.input}
             value={this.state.port}
-            onChangeText={event => this.setState({ port: Number(event) })}
+            onChangeText={event => this.setState({port: Number(event)})}
           />
         </View>
         {this.state.status === 'connected' ? (
@@ -125,9 +92,9 @@ class App extends Component {
             onPress={() => {
               client.disconnect();
               clearInterval(interval);
-              this.setState({ status: '', subscribedTopic: '' });
+              this.setState({status: '', subscribedTopic: ''});
             }}
-            buttonStyle={{ backgroundColor: '#397af8' }}
+            buttonStyle={{backgroundColor: '#397af8'}}
             disabled={!this.state.ip || !this.state.port}
           />
         ) : (
@@ -135,7 +102,7 @@ class App extends Component {
             type="solid"
             title="CONNECT"
             onPress={this.connect}
-            buttonStyle={{ backgroundColor: '#72F178' }}
+            buttonStyle={{backgroundColor: '#72F178'}}
             disabled={!this.state.ip || !this.state.port}
           />
         )}
@@ -145,22 +112,22 @@ class App extends Component {
             <Button
               type="solid"
               title="Low"
-              onPress={e => this.setState({ severity: 'Low' })}
-              buttonStyle={{ backgroundColor: '#72F178', margin: 20 }}
+              onPress={e => this.setState({severity: 'Low'})}
+              buttonStyle={{backgroundColor: '#72F178', margin: 20}}
               style={styles.severityButtonContainer}
             />
             <Button
               type="solid"
               title="Medium"
-              onPress={e => this.setState({ severity: 'Medium' })}
-              buttonStyle={{ backgroundColor: '#FFF145', margin: 20 }}
+              onPress={e => this.setState({severity: 'Medium'})}
+              buttonStyle={{backgroundColor: '#FFF145', margin: 20}}
               style={styles.severityButtonContainer}
             />
             <Button
               type="solid"
               title="High"
-              onPress={e => this.setState({ severity: 'High' })}
-              buttonStyle={{ backgroundColor: '#E21100', margin: 20 }}
+              onPress={e => this.setState({severity: 'High'})}
+              buttonStyle={{backgroundColor: '#E21100', margin: 20}}
               style={styles.severityButtonContainer}
             />
           </View>
@@ -169,7 +136,7 @@ class App extends Component {
           type="solid"
           title="UPDATE"
           onPress={this.sendMessage}
-          buttonStyle={{ backgroundColor: '#127676' }}
+          buttonStyle={{backgroundColor: '#127676'}}
           disabled={!this.state.severity}
         />
       </View>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RealClient</string>
+    <string name="broker_port">Broker Port</string>
+    <string name="connect">Connect</string>
+    <string name="broker_ip">Broker IP</string>
+    <string name="severity">Severity</string>
+    <string name="low_severity">Low</string>
+    <string name="medium_severity">Medium</string>
+    <string name="high_severity">High</string>
+    <string name="update">Update</string>
+</resources>
