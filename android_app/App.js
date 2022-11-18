@@ -8,6 +8,8 @@ import { View, Text, StyleSheet, TextInput } from 'react-native';
 import { Button } from '@rneui/base';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import init from 'react_native_mqtt';
+import pahoMqttMin from './paho.javascript-1.0.3/paho-mqtt-min';
+-pahoMqttMin
 
 init({
   size: 10000,
@@ -49,7 +51,7 @@ class App extends Component {
     // TODO: subscribeTopic
   };
 
-  onConnect = () => {
+  onConnect = () => {  
     var connectionString = context.invocationContext.host + ":" + context.invocationContext.port + context.invocationContext.path;
     logMessage("INFO", "Connection Success ", "[URI: ", connectionString, ", ID: ", context.invocationContext.clientId, "]");
     var statusSpan = document.getElementById("connectionStatus");
