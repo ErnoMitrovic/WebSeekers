@@ -1,116 +1,203 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+/* eslint-disable radix */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable no-undef */
+/* @flow */
+import React, {Component} from 'react';
+import {View, Text, StyleSheet, TextInput} from 'react-native';
 
-import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {Button} from '@rneui/base';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import init from 'react_native_mqtt';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+init({
+  size: 10000,
+  storageBackend: AsyncStorage,
+  defaultExpires: 1000 * 3600 * 24,
+  enableCache: true,
+  sync: {},
+});
 
-/* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
- * LTI update could not be added via codemod */
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      topic: '',
+      subscribedTopic: '',
+      message: '',
+      messageList: [],
+      status: '',
+      ip: '',
+      port: 0,
+      severity: '',
+    };
+    // client.onConnectionLost = this.onConnectionLost;
+    // client.onMessageArrived = this.onMessageArrived;
+  }
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  onConnectionLost = responseObject => {
+    // TODO: onConnectionLost
   };
 
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+  onMessageArrived = message => {
+    // TODO: onMessageArrived
+  };
+
+  subscribeTopic = () => {
+    // TODO: subscribeTopic
+  };
+
+  onConnect = () => {
+    // TODO: onConnect
+  };
+
+  onFailure = err => {
+    // TODO: onFailure
+  };
+
+  connect = () => {
+    // TODO: connect
+  };
+
+  unSubscribeTopic = () => {
+    // TODO: unSubscribeTopic
+  };
+
+  sendMessage = () => {
+    // TODO: sendMessage
+  };
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.connectContainer}>
+          <Text style={styles.label}>Broker IP:</Text>
+          <TextInput
+            style={styles.input}
+            value={this.state.ip}
+            onChangeText={event => this.setState({ip: event})}
+          />
         </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+        <View style={styles.connectContainer}>
+          <Text style={styles.label}>Broker Port:</Text>
+          <TextInput
+            style={styles.input}
+            value={this.state.port}
+            onChangeText={event => this.setState({port: Number(event)})}
+          />
+        </View>
+        {this.state.status === 'connected' ? (
+          <Button
+            type="solid"
+            title="DISCONNECT"
+            onPress={() => {
+              client.disconnect();
+              clearInterval(interval);
+              this.setState({status: '', subscribedTopic: ''});
+            }}
+            buttonStyle={{backgroundColor: '#397af8'}}
+            disabled={!this.state.ip || !this.state.port}
+          />
+        ) : (
+          <Button
+            type="solid"
+            title="CONNECT"
+            onPress={this.connect}
+            buttonStyle={{backgroundColor: '#72F178'}}
+            disabled={!this.state.ip || !this.state.port}
+          />
+        )}
+        <View style={styles.severityContainer}>
+          <Text style={styles.label}>Severity</Text>
+          <View style={styles.severityButtonContainer}>
+            <Button
+              type="solid"
+              title="Low"
+              onPress={e => this.setState({severity: 'Low'})}
+              buttonStyle={{backgroundColor: '#72F178', margin: 20}}
+              style={styles.severityButtonContainer}
+            />
+            <Button
+              type="solid"
+              title="Medium"
+              onPress={e => this.setState({severity: 'Medium'})}
+              buttonStyle={{backgroundColor: '#FFF145', margin: 20}}
+              style={styles.severityButtonContainer}
+            />
+            <Button
+              type="solid"
+              title="High"
+              onPress={e => this.setState({severity: 'High'})}
+              buttonStyle={{backgroundColor: '#E21100', margin: 20}}
+              style={styles.severityButtonContainer}
+            />
+          </View>
+        </View>
+        <Button
+          type="solid"
+          title="UPDATE"
+          onPress={this.sendMessage}
+          buttonStyle={{backgroundColor: '#127676'}}
+          disabled={!this.state.severity}
+        />
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1,
+    paddingTop: 70,
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  connectContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    margin: 16,
+    alignItems: 'center',
+    justifyContent: 'space-between',
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  label: {
+    fontSize: 20,
+    fontWeight: '500',
   },
-  highlight: {
-    fontWeight: '700',
+  input: {
+    padding: 10,
+    marginLeft: 40,
+    height: 50,
+    width: 200,
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+  },
+  severityContainer: {
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    display: 'flex',
+    flexDirection: 'column',
+    height: 150,
+    margin: 20,
+    padding: 20,
+  },
+  severityButtonContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    width: 'auto',
+  },
+  messageContainer: {
+    margin: 20,
+  },
+  message: {
+    padding: 10,
+    height: 50,
+    width: '100%',
+    marginTop: 15,
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
   },
 });
 
