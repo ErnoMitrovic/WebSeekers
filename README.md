@@ -72,16 +72,18 @@ Moreover, it is worth mentioning that the server will have a Mosquitto borker, w
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # 🤝🏻 Collaborators <a name = "collaborators"></a>
-### ITESM (Mexico) & ITA (Brazil)
-- Caio Graca Gomes              - (ITA)
+### TEC (Mexico) & ITA (Brazil)
+
 - Ernesto Miranda Solís         - (TEC)
-- Henrique Fernandes Feitosa    - (ITA)
+- Tania Regina Ramírez Vázquez  - (TEC)
 - José Andrés Rodríguez Ruiz    - (TEC)
+- Victoria Rodríguez de León    - (TEC)
 - Juan Antonio Mancera Velasco  - (TEC)
 - Owen Rosales Castro           - (TEC)
-- Tania Regina Ramírez Vázquez  - (TEC)
+
+- Caio Graca Gomes              - (ITA)
+- Henrique Fernandes Feitosa    - (ITA)
 - Thomas Neto                   - (ITA)
-- Victoria Rodríguez de León    - (TEC)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
