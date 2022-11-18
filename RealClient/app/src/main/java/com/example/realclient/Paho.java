@@ -18,7 +18,6 @@ public class Paho implements MqttCallback {
     private MqttClient client;
 
     public Paho() {
-        Random rand = new Random();
         topic = "";
         broker = "";
         clientID = "";
@@ -64,14 +63,6 @@ public class Paho implements MqttCallback {
         System.out.println("Disconnect");
     }
 
-    public void reconnect(){
-        try {
-            if (!client.isConnected()) client.reconnect();
-        } catch (MqttException e){
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public void connectionLost(Throwable cause) {
         System.out.println("Connection Lost");
@@ -88,7 +79,9 @@ public class Paho implements MqttCallback {
     public void deliveryComplete(IMqttDeliveryToken token) {
         try {
             System.out.println("Delivery complete");
-            System.out.println(token.getMessage().toString());
+            if (token.getMessage() != null){
+                System.out.println(token.getMessage().toString());
+            }
         } catch (MqttException e) {
             e.printStackTrace();
         }
