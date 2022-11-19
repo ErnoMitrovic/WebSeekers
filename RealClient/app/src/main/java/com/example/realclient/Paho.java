@@ -9,10 +9,9 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 import java.nio.charset.StandardCharsets;
-import java.util.Random;
 
 public class Paho implements MqttCallback {
-    private String topic, broker, clientID;
+    private String topic, broker, clientID, messageReceived;
     private final int qos;
     private final MemoryPersistence persistence;
     private MqttClient client;
@@ -23,6 +22,7 @@ public class Paho implements MqttCallback {
         clientID = "";
         qos = 2;
         persistence = new MemoryPersistence();
+        messageReceived = "";
     }
 
     public Paho(String topic, String broker, String clientID) {
@@ -70,9 +70,10 @@ public class Paho implements MqttCallback {
     }
 
     @Override
-    public void messageArrived(String topic, MqttMessage message) throws Exception {
+    public void messageArrived(String topic, MqttMessage message) {
         System.out.println("Message arrived");
         System.out.println(topic + " " + message.toString());
+        messageReceived = message.toString();
     }
 
     @Override
@@ -85,5 +86,9 @@ public class Paho implements MqttCallback {
         } catch (MqttException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getMessageReceived() {
+        return messageReceived;
     }
 }
