@@ -81,12 +81,9 @@
 
             <RadioButton
                 android:id="@+id/lowSeverity"
+                style="@style/RadioStatusLow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_button_on"
-                android:backgroundTint="#0c822f"
-                android:button="@null"
-                android:checked="false"
                 android:gravity="center"
                 android:minWidth="80dp"
                 android:minHeight="80dp"
@@ -94,11 +91,9 @@
 
             <RadioButton
                 android:id="@+id/mediumSeverity"
+                style="@style/RadioStatusMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_button_off"
-                android:backgroundTint="#d6d304"
-                android:button="@null"
                 android:gravity="center"
                 android:minWidth="80dp"
                 android:minHeight="80dp"
@@ -106,11 +101,9 @@
 
             <RadioButton
                 android:id="@+id/highSeverity"
+                style="@style/RadioStatusHigh"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/round_button_off"
-                android:backgroundTint="#e6070e"
-                android:button="@null"
                 android:gravity="center"
                 android:minWidth="80dp"
                 android:minHeight="80dp"
