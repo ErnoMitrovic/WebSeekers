@@ -10,6 +10,7 @@
         android:id="@+id/brokerIP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints="1.1.1.1"
         android:ems="10"
         android:hint="@string/broker_ip"
         android:inputType="text"
@@ -55,18 +56,21 @@
         android:layout_width="381dp"
         android:layout_height="154dp"
         android:layout_marginTop="24dp"
+        android:background="@drawable/margins_severity"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/connect">
 
         <TextView
-            android:layout_margin="8dp"
             android:id="@+id/severityTitle"
-            style="@style/TextAppearance.MaterialComponents.Subtitle1"
+            style="@style/TextAppearance.AppCompat.Body2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/severity" />
+            android:layout_margin="8dp"
+            android:text="@string/severity"
+            android:textAllCaps="true"
+            android:textSize="20sp" />
 
         <RadioGroup
             android:id="@+id/severities"
@@ -81,9 +85,11 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_button_on"
                 android:backgroundTint="#0c822f"
+                android:button="@null"
                 android:checked="false"
                 android:gravity="center"
                 android:minWidth="80dp"
+                android:minHeight="80dp"
                 android:text="@string/low_severity" />
 
             <RadioButton
@@ -92,8 +98,10 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_button_off"
                 android:backgroundTint="#d6d304"
+                android:button="@null"
                 android:gravity="center"
                 android:minWidth="80dp"
+                android:minHeight="80dp"
                 android:text="@string/medium_severity" />
 
             <RadioButton
@@ -102,8 +110,10 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_button_off"
                 android:backgroundTint="#e6070e"
+                android:button="@null"
                 android:gravity="center"
                 android:minWidth="80dp"
+                android:minHeight="80dp"
                 android:text="@string/high_severity" />
         </RadioGroup>
 
@@ -123,8 +133,8 @@
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="gone"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
