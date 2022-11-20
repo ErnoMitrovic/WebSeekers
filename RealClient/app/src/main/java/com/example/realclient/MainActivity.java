@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void publish() {
+        if (paho == null) return;
         String severity = "";
         for (int i = 0; i < mainBinding.severities.getChildCount(); i++) {
             View v = mainBinding.severities.getChildAt(i);
@@ -133,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
-        if (!severity.isEmpty() && paho != null) {
+        if (!severity.isEmpty() && paho.checkConnection()) {
             setLocation();
             location = mainBinding.location.getText().toString();
             String message = uniqueId + ":" + severity + ":" + location;

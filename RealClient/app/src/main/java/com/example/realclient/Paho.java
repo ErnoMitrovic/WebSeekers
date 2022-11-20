@@ -80,7 +80,7 @@ public class Paho implements MqttCallback {
     public void deliveryComplete(IMqttDeliveryToken token) {
         try {
             System.out.println("Delivery complete");
-            if (token.getMessage() != null){
+            if (token.getMessage() != null) {
                 System.out.println(token.getMessage().toString());
             }
         } catch (MqttException e) {
@@ -90,5 +90,9 @@ public class Paho implements MqttCallback {
 
     public String getMessageReceived() {
         return messageReceived;
+    }
+
+    public boolean checkConnection() {
+        return client.isConnected();
     }
 }
