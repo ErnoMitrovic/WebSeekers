@@ -223,6 +223,7 @@ public class MainActivity extends AppCompatActivity {
                         if (System.currentTimeMillis() >= 20_000 + startTime) {
                             publish();
                             startTime = System.currentTimeMillis();
+                            Log.d("Thread", "publish");
                         }
                     });
                     innerSleep = System.currentTimeMillis();
