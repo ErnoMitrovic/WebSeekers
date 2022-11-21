@@ -40,12 +40,17 @@
 <!-- ABOUT THE PROJECT -->
 # 🗂️ About The Project <a name = "about-the-project"></a>
 
+## Introduction
+Particularly our project doesn’t have a commercial objective, instead, a social one. As we have seen in the described scenario, natural disasters affect tons of people around the world, and it’s crucial because most of them can’t be predicted. With this project we are committed to develop a tool, in this case an app, which provide safety features in case of any disaster to all the communities that are in vulnerable areas.
+
 ## Collaboration
 Global Shared Learning: Classroom is an initiative that aims to link a course at the Tecnológico de Monterrey with a course at an associated international university, in this case the Instituto Tecnológico de Aeronáutica (ITA), through an international element, using technological tools to connect with others students, foster collaboration and facilitate learning in multicultural environments.
 Therefore, with the help of the international component, this course aims to demonstrate the main IoT foundations through the implementation of a digital system prototype that obtains data through sensors, processes it, and presents it on an Internet platform for later analysis and visualization.
 
-## Scenario
+## Motivation
+Natural disasters are one of the biggest issues of humankind, we don’t have enough technology to predict these events, yet. But by now, we can use all our efforts to reduce the impact and assure the life of thousands of people. Our goal is to establish a connection between the affected people and the rescue teams to act in the fastest way possible, knowing their location and mapping the users within a certain range, so que can reduce losses and save the most lives we can.
 
+## Scenario
 A disaster is a sudden and unfortunate event that brings with it a great damage, loss, and destruction of local infrastructure. The WHO has defined it as "any sudden occurrence of events that cause damage, ecological disruption, loss of human life, deterioration of health and health services, on a scale sufficient to waeeant an extraordinary response from outside the affected community or area". 
 
 <p align="center" width="100%"><a name = "#itajai" href="https://youtu.be/9WIwlljva_s"><img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/DisasterManagementCycle.jpg" alt="Disaster Management. Disasters: types and effects" width="65%"></a></p>
