@@ -1,4 +1,4 @@
-# 🗂️ SYSTEM REQUIREMENTS
+# 🗂️ System requirements
 + ***CLIENT STAGE***  
 Connection to users will be established via Android Devices, since they are popular devices and fulfill the connection requirements.  
 
@@ -18,14 +18,14 @@ Cloud stage will be approached in two ways:
     
     To implement our system, we need to host it in a network to operate and receive the multiple requests. In this first stage, we will use ‘Mininet’ to simulate this network and verify the proper operation of each part of the system. Mininet is a network emulator which creates a network of virtual hosts, switches, controllers, and links. Mininet hosts run standard Linux network software.
 
-# ⚙️ FUNCITONAL REQUIRMENTES
+# ⚙️ Functional requirements
 + The system must allow users to introduce the brokers IP
 +	The system must allow users to introduce the brokers port in usage 
 +	The system must establish a connection to the network
 +	The system must allow users to select their severity status
 +	The system must send the data to the broker every 10 seconds
 
-# 📱 EXTERNAL INTERFACE REQUIREMENTS
+# 📱 External interface requirements
 The software is exclusively created for Android devices, our system doesn’t demand a lot resources but we recommend to use Android devices from Android 7 Nougat and upwards, since they still have support from Google and can run every basic app without problems.
 
 ### Specific requirements:
@@ -34,7 +34,7 @@ Our app/system will need to have access to the GPS to send the exact device loca
 + A network connection  
 It is required a connection to establish communication to the broker, Wi-Fi is the most popular way nowadays, but since the purpose of the project is highly probable that Wi-Fi service is not available, so a cellular connection will be more than enough (3G, 4G or 5G).
 
-# 📡 NON-FUNCTIONALS REQUIREMENTS
+# 📡 Non-functional requirements
 + When the users introduce the broker’s IP and Port, the “Connect” button will be enabled and after pressing it, the user will receive within 2 seconds a confirmation of connection
 + Once the connection is established, the user can select between three severity status (low, medium, high), when the “Update” button is pressed, a sent confirmation will appear within 3 seconds.
 + If the status of the user changes (either it improves or gets worst), a new severity status can be selected and then press the “Update”, an update confirmation will appear within 3 seconds.
