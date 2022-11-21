@@ -9,7 +9,7 @@
 -->
 
 # GSL IoT Project: WebSeekers Team
-<img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/DisasterManagementCycle.jpg" alt="WebSeekers Logo" width="65%"></a></p>
+<img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/WS_logo.png" alt="WebSeekers Logo" width="65%"></a></p>
 
 <!-- PROJECT SHIELDS -->
 <!--
