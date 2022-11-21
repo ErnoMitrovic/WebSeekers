@@ -34,6 +34,13 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 
 import java.util.UUID;
 
+/**
+ * <h1>Main Activity</h1>
+ * <p>Class that enables the main activity</p>
+ * @author ErnoMitrovic <a>https://github.com/ErnoMitrovic</a>
+ * @version 1.0
+ * @since 21/11/2022
+ * */
 public class MainActivity extends AppCompatActivity {
     private String location;
     private ActivityMainBinding mainBinding;
@@ -44,23 +51,35 @@ public class MainActivity extends AppCompatActivity {
     private DBHandler dbHandler;
     long startTime;
     static boolean active = false;
+    SyncUpdate update;
 
+    /**
+     * On start method used to ser active to true.
+     * */
     @Override
     protected void onStart() {
-        super.onStart();
         active = true;
+        update = new SyncUpdate();
+        update.start();
+        super.onStart();
     }
 
+    /**
+     * On stop method used to set active to false. */
     @Override
     protected void onStop() {
-        super.onStop();
         active = false;
+        super.onStop();
     }
 
+    /**
+     * Method used to create and inflate the views, here, the on click listeners are also set.
+     * @param savedInstanceState if the user exits the app.
+     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        active = true;
+        // active = true;
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         View mainView = mainBinding.getRoot();
         setContentView(mainView);
@@ -69,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         locationRequest = builder.build();
         handler = new Handler();
         dbHandler = new DBHandler(MainActivity.this, "user.db");
-        AsyncUpdate update = new AsyncUpdate();
+        update = new SyncUpdate();
         update.start();
         mainBinding.connect.setOnClickListener(view -> {
             String ip = mainBinding.brokerIP.getText().toString();
@@ -100,6 +119,9 @@ public class MainActivity extends AppCompatActivity {
         mainBinding.update.setOnClickListener(view -> publish());
     }
 
+    /**
+     * Used to set the location base on the user.
+     * */
     public void setLocation() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (getApplicationContext().
@@ -132,6 +154,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Used to publish the messages to the broker
+     * */
     public void publish() {
         if (paho == null) return;
         String severity = "";
@@ -165,6 +190,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Used to request the user to turn his location on.
+     * */
     private void turnOnLocation() {
         LocationSettingsRequest.Builder settingsBuilder = new LocationSettingsRequest.Builder()
                 .addLocationRequest(locationRequest);
@@ -193,11 +221,21 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Used to check the location permissions
+     * @return the status of the location service.
+     * */
     private boolean isLocationEnable() {
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
     }
 
+    /**
+     * Request permission results callback
+     * @param requestCode the requested code.
+     * @param permissions the string of permissions.
+     * @param grantResults the results granted.
+     * */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
@@ -211,17 +249,33 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Used to disconnect the client.
+     * */
     @Override
     protected void onDestroy() {
         if(paho != null) paho.disconnect();
         super.onDestroy();
     }
 
-    private class AsyncUpdate extends Thread {
-        public AsyncUpdate(){
+    /**
+     * Class to instantiate a new thread to update the data.
+     * @see Thread
+     * @author ErnoMitrovic <a>https://github.com/ErnoMitrovic</a>
+     * @version 1.0
+     * @since 21/11/2022
+     * */
+    private class SyncUpdate extends Thread {
+        /**
+         * Constructor for the SyncUpdate class
+         * */
+        public SyncUpdate(){
             super();
             startTime = System.currentTimeMillis();
         }
+        /**
+         * The method to run for the Thread
+         * */
         @Override
         public void run() {
             long innerSleep = System.currentTimeMillis();
