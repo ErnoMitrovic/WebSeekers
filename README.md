@@ -83,7 +83,7 @@ For instance, if the local infrastructure is affected and there are no telecommu
 
 - Ernesto Miranda Solís         - (TEC)
 - Tania Regina Ramírez Vázquez  - (TEC)
-- José Andrés Rodríguez Ruiz    - (TEC)
+- José Andrés Rodríguez Ruiz    - (TEC) :mexico:
 - Victoria Rodríguez de León    - (TEC)
 - Juan Antonio Mancera Velasco  - (TEC)
 - Owen Rosales Castro           - (TEC)
