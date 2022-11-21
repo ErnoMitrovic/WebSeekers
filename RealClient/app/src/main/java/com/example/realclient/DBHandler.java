@@ -10,23 +10,45 @@ import android.provider.BaseColumns;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * <h1>Database Handler</h1>
+ * <p>Class that acts as a helper to save an unique user ID locally to a sqlite database</p>
+ * @author ErnoMitrovic <a>https://github.com/ErnoMitrovic</a>
+ * @version 1.0
+ * @since 21/11/2022
+ * */
 public class DBHandler extends SQLiteOpenHelper {
     private static final int DB_VERSION = 1;
+    /**
+     * Constructor for database handler
+     * @param context the context from which it is being called
+     * @param DB_NAME name of the database
+     * @see SQLiteOpenHelper
+     * */
     public DBHandler(Context context, String DB_NAME){
         super(context, DB_NAME, null, DB_VERSION);
     }
 
+    /**
+     * On create method callback
+     * @param sqLiteDatabase database to execute a query.
+     * */
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(Entry.CREATE_TABLE);
     }
-
+    /**
+     * Upgrade the database, just if the app is online.
+     * */
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL(Entry.DELETE_TABLE);
         onCreate(sqLiteDatabase);
     }
-
+    /**
+     * Method to insert a user
+     * @param user user to insert
+     * */
     public void insertUser(String user) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -35,6 +57,12 @@ public class DBHandler extends SQLiteOpenHelper {
             System.err.println("Error inserting data");
     }
 
+    /**
+     * Get the user if it exists in database.
+     * @return the string representation of the user id
+     * @throws IllegalArgumentException if column does not exist
+     * @throws android.database.CursorIndexOutOfBoundsException if cursor is called with an unbounded index
+     * */
     public String getUser(){
         String userID = "";
         SQLiteDatabase db = this.getReadableDatabase();
@@ -57,7 +85,13 @@ public class DBHandler extends SQLiteOpenHelper {
         return userID;
     }
 
-    public static class Entry implements BaseColumns{
+    /**
+     * Inner class to establish the table's schema
+     * @author ErnoMitrovic <a>https://github.com/ErnoMitrovic</a>
+     * @version 1.0
+     * @since 21/11/2022
+     * */
+    public static class Entry{
         public static final String TABLE_NAME = "users";
         public static final String COL_NAME = "user_id";
         private static final String CREATE_TABLE = "CREATE TABLE " +

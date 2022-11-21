@@ -15,9 +15,9 @@ import java.nio.charset.StandardCharsets;
  * <p>The {@code Paho} class implements the functionality to operate a MQTT protocol
  * using Paho from Eclipse.</p>
  * @see org.eclipse.paho.client.mqttv3.MqttCallback
- * @author ErnoMitrovic
+ * @author ErnoMitrovic <a>https://github.com/ErnoMitrovic</a>
  * @version 1.0
- * @since 2022-11-21
+ * @since 21/11/2022
  * */
 public class Paho implements MqttCallback {
     private String topic, broker, clientID, messageReceived;
