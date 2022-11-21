@@ -9,4 +9,4 @@
 ## :mailbox: Message Broker
 <p align="justify"> Clic on the image</p>
 
-<p align="center" width="100%"><a name = "Message Broker" href="https://youtu.be/D-DeJWVCnik"><img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/App_Overview.png" alt="Message Broker  YouTube Video" width="65%"></a></p>
+<p align="center" width="100%"><a name = "Message Broker" href="https://youtu.be/D-DeJWVCnik"><img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/Message_Broker.png" alt="Message Broker  YouTube Video" width="65%"></a></p>
