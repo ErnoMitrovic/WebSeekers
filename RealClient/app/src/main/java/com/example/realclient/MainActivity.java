@@ -3,6 +3,7 @@ package com.example.realclient;
 import android.Manifest;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
+import android.database.CursorIndexOutOfBoundsException;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -36,10 +37,11 @@ import java.util.UUID;
 public class MainActivity extends AppCompatActivity {
     private String location;
     private ActivityMainBinding mainBinding;
-    final String uniqueId = UUID.randomUUID().toString();
+    private static String UNIQUE_ID;
     private Paho paho;
     private LocationRequest locationRequest;
     private Handler handler;
+    private DBHandler dbHandler;
     long startTime;
     static boolean active = false;
 
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 .Builder(Priority.PRIORITY_BALANCED_POWER_ACCURACY, 2000L);
         locationRequest = builder.build();
         handler = new Handler();
+        dbHandler = new DBHandler(MainActivity.this, "user.db");
         AsyncUpdate update = new AsyncUpdate();
         update.start();
         mainBinding.connect.setOnClickListener(view -> {
@@ -73,7 +76,14 @@ public class MainActivity extends AppCompatActivity {
             String port = mainBinding.brokerPort.getText().toString();
             String broker = "tcp://" + ip + ":" + port;
             Log.d("Broker", broker);
-            paho = new Paho("emergency", broker, uniqueId);
+            try{
+                UNIQUE_ID = dbHandler.getUser();
+                paho = new Paho("emergency", broker, UNIQUE_ID);
+            } catch(CursorIndexOutOfBoundsException | IllegalArgumentException e){
+                UNIQUE_ID = UUID.randomUUID().toString();
+                dbHandler.insertUser(UNIQUE_ID);
+                paho = new Paho("emergency", broker, UNIQUE_ID);
+            }
             try {
                 paho.connect();
             } catch (MqttException e) {
@@ -137,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
         if (!severity.isEmpty() && paho.checkConnection()) {
             setLocation();
             location = mainBinding.location.getText().toString();
-            String message = uniqueId + ":" + severity + ":" + location;
+            String message = UNIQUE_ID + ":" + severity + ":" + location;
             Log.d("Message", message);
             try {
                 paho.sendMessage(message);
