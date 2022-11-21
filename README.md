@@ -41,13 +41,13 @@
 <!-- ABOUT THE PROJECT -->
 # 🗂️ About The Project <a name = "about-the-project"></a>
 
-## 🏁 INTRODUCTION
+## 🏁 Introduction
 Particularly our project doesn’t have a commercial objective, instead, a social one. As we have seen in the described scenario, natural disasters affect tons of people around the world, and it’s crucial because most of them can’t be predicted. With this project we are committed to develop a tool, in this case an app, which provide safety features in case of any disaster to all the communities that are in vulnerable areas.
 
-## 🎯 MOTIVATION
+## 🎯 Motivation
 Natural disasters are one of the biggest issues of humankind, we don’t have enough technology to predict these events, yet. But by now, we can use all our efforts to reduce the impact and assure the life of thousands of people. Our goal is to establish a connection between the affected people and the rescue teams to act in the fastest way possible, knowing their location and mapping the users within a certain range, so que can reduce losses and save the most lives we can.
 
-## Collaboration
+## :globe_with_meridians: Collaboration
 Global Shared Learning: Classroom is an initiative that aims to link a course at the Tecnológico de Monterrey with a course at an associated international university, in this case the Instituto Tecnológico de Aeronáutica (ITA), through an international element, using technological tools to connect with others students, foster collaboration and facilitate learning in multicultural environments.
 Therefore, with the help of the international component, this course aims to demonstrate the main IoT foundations through the implementation of a digital system prototype that obtains data through sensors, processes it, and presents it on an Internet platform for later analysis and visualization.
 
@@ -59,7 +59,7 @@ A disaster is a sudden and unfortunate event that brings with it a great damage,
 Consequently, disaster management is extremely important to suriveve in the case of a major unfortunate evenet (natural or man-made). Therefore, this important concept can ve defined as the organisation aspects of emergencies through the application of response and recovery in order to lessen the impact.
 For instance, if the local infrastructure is affected and there are no telecommunication resources, with a good disaster management, the essential communication resources coulde be provided in the response stage in order to supply a complete telecommunication infrastructure that provides Command and Control to support the operations.
 
-## Solution
+## :ocean: Solution
 
 Considering the importance that disaster management has in both response and recovery stages, the objective of this project is to provide an environment to send distress messages when a disaster occurs. Consequently, it is important to consider that for this scenario the local infrastructure has been affected and there are no telecommunication resources to provide communication to crictical people or groups, such as rescue teams. Furthermore, it is worth mentioning that because this project is focused on the response stage, it considers the usage of the menas existent in the community, the help of volunteers and technology such as drones to provide telecommunication resources that hel support the identification of hazards. 
 
