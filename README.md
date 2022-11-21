@@ -10,7 +10,7 @@
 
 <p align="center"> <img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/WS_logo.png" alt="WebSeekers Logo" width="65"></a></p>
 
-# GSL IoT Project: WebSeekers Team 
+<h1 align="center">GSL IoT Project: WebSeekers Team</h1>
 
 <!-- PROJECT SHIELDS -->
 <!--
