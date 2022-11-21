@@ -8,7 +8,8 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-<p> # GSL IoT Project: WebSeekers Team <img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/WS_logo.png" alt="WebSeekers Logo" width="65"></a></p>
+<p align="center"> <img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/WS_logo.png" alt="WebSeekers Logo" width="65"></a></p>
+# GSL IoT Project: WebSeekers Team 
 
 <!-- PROJECT SHIELDS -->
 <!--
