@@ -1,1 +1,1 @@
-
+<p align="center" width="100%"><a name = "App Overview" href="https://youtu.be/ZpJ9pTAluqA"><img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/DisasterManagementCycle.jpg" alt="Disaster Management. Disasters: types and effects" width="65%"></a></p>
