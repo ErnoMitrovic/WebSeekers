@@ -54,7 +54,7 @@ Therefore, with the help of the international component, this course aims to dem
 ## Scenario
 A disaster is a sudden and unfortunate event that brings with it a great damage, loss, and destruction of local infrastructure. The WHO has defined it as "any sudden occurrence of events that cause damage, ecological disruption, loss of human life, deterioration of health and health services, on a scale sufficient to waeeant an extraordinary response from outside the affected community or area". 
 
-<p align="center" width="100%"><a name = "#itajai" href="https://youtu.be/9WIwlljva_s"><img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/DisasterManagementCycle.jpg" alt="Disaster Management. Disasters: types and effects" width="65%"></a></p>
+<p align="center" width="100%"><a name = "Disaster Management" href="https://youtu.be/9WIwlljva_s"><img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/DisasterManagementCycle.jpg" alt="Disaster Management. Disasters: types and effects" width="65%"></a></p>
 
 Consequently, disaster management is extremely important to suriveve in the case of a major unfortunate evenet (natural or man-made). Therefore, this important concept can ve defined as the organisation aspects of emergencies through the application of response and recovery in order to lessen the impact.
 For instance, if the local infrastructure is affected and there are no telecommunication resources, with a good disaster management, the essential communication resources coulde be provided in the response stage in order to supply a complete telecommunication infrastructure that provides Command and Control to support the operations.
