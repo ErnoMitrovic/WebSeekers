@@ -2,23 +2,22 @@
 <resources>
     <style name="RadioStatusLow" parent="@android:style/Widget.CompoundButton.RadioButton">
         <item name="android:button">@null</item>
-        <item name="android:background">@drawable/btn_states</item>
-        <item name="android:backgroundTint">@color/green</item>
+        <item name="android:background">@drawable/btn_states_low</item>
         <item name="android:minHeight">80dp</item>
         <item name="android:minWidth">80dp</item>
+        <item name="android:layout_marginRight">4dp</item>
     </style>
     <style name="RadioStatusMedium">
         <item name="android:button">@null</item>
-        <item name="android:background">@drawable/btn_states </item>
-        <item name="android:backgroundTint">@color/yellow</item>
+        <item name="android:background">@drawable/btn_states_medium </item>
         <item name="minWidth">80dp</item>
         <item name="minHeight">80dp</item>
+        <item name="android:layout_marginRight">4dp</item>
     </style>
 
     <style name="RadioStatusHigh">
         <item name="android:button">@null</item>
-        <item name="android:background">@drawable/btn_states</item>
-        <item name="android:backgroundTint">@color/red</item>
+        <item name="android:background">@drawable/btn_states_high</item>
         <item name="android:minHeight">80dp</item>
         <item name="android:minWidth">80dp</item>
     </style>

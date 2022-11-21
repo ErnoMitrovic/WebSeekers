@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private Paho paho;
     private LocationRequest locationRequest;
     private Handler handler;
-
+    long startTime;
     static boolean active = false;
 
     @Override
@@ -141,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Message", message);
             try {
                 paho.sendMessage(message);
+                startTime = System.currentTimeMillis();
             } catch (MqttException e) {
                 System.out.println("reason " + e.getReasonCode());
                 System.out.println("msg " + e.getMessage());
@@ -207,7 +208,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private class AsyncUpdate extends Thread {
-        long startTime;
         public AsyncUpdate(){
             super();
             startTime = System.currentTimeMillis();
