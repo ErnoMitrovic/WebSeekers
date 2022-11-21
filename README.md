@@ -51,7 +51,7 @@ Natural disasters are one of the biggest issues of humankind, we don’t have en
 Global Shared Learning: Classroom is an initiative that aims to link a course at the Tecnológico de Monterrey with a course at an associated international university, in this case the Instituto Tecnológico de Aeronáutica (ITA), through an international element, using technological tools to connect with others students, foster collaboration and facilitate learning in multicultural environments.
 Therefore, with the help of the international component, this course aims to demonstrate the main IoT foundations through the implementation of a digital system prototype that obtains data through sensors, processes it, and presents it on an Internet platform for later analysis and visualization.
 
-## Scenario
+## :ocean: Scenario
 A disaster is a sudden and unfortunate event that brings with it a great damage, loss, and destruction of local infrastructure. The WHO has defined it as "any sudden occurrence of events that cause damage, ecological disruption, loss of human life, deterioration of health and health services, on a scale sufficient to waeeant an extraordinary response from outside the affected community or area". 
 
 <p align="center" width="100%"><a name = "Disaster Management" href="https://youtu.be/9WIwlljva_s"><img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/DisasterManagementCycle.jpg" alt="Disaster Management. Disasters: types and effects" width="65%"></a></p>
@@ -59,7 +59,7 @@ A disaster is a sudden and unfortunate event that brings with it a great damage,
 Consequently, disaster management is extremely important to suriveve in the case of a major unfortunate evenet (natural or man-made). Therefore, this important concept can ve defined as the organisation aspects of emergencies through the application of response and recovery in order to lessen the impact.
 For instance, if the local infrastructure is affected and there are no telecommunication resources, with a good disaster management, the essential communication resources coulde be provided in the response stage in order to supply a complete telecommunication infrastructure that provides Command and Control to support the operations.
 
-## :ocean: Solution
+## :iphone: Solution
 
 Considering the importance that disaster management has in both response and recovery stages, the objective of this project is to provide an environment to send distress messages when a disaster occurs. Consequently, it is important to consider that for this scenario the local infrastructure has been affected and there are no telecommunication resources to provide communication to crictical people or groups, such as rescue teams. Furthermore, it is worth mentioning that because this project is focused on the response stage, it considers the usage of the menas existent in the community, the help of volunteers and technology such as drones to provide telecommunication resources that hel support the identification of hazards. 
 
