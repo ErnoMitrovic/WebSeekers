@@ -1,9 +1,3 @@
-# 🏁 INTRODUCTION
-Particularly our project doesn’t have a commercial objective, instead, a social one. As we have seen in the described scenario, natural disasters affect tons of people around the world, and it’s crucial because most of them can’t be predicted. With this project we are committed to develop a tool, in this case an app, which provide safety features in case of any disaster to all the communities that are in vulnerable areas.
-
-# 🎯 MOTIVATION
-Natural disasters are one of the biggest issues of humankind, we don’t have enough technology to predict these events, yet. But by now, we can use all our efforts to reduce the impact and assure the life of thousands of people. Our goal is to establish a connection between the affected people and the rescue teams to act in the fastest way possible, knowing their location and mapping the users within a certain range, so que can reduce losses and save the most lives we can.
-
 # 🗂️ SYSTEM REQUIREMENTS
 + ***CLIENT STAGE***  
 Connection to users will be established via Android Devices, since they are popular devices and fulfill the connection requirements.  
