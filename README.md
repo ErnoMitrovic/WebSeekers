@@ -81,16 +81,16 @@ For instance, if the local infrastructure is affected and there are no telecommu
 # 🤝🏻 Collaborators <a name = "collaborators"></a>
 ### TEC (Mexico) & ITA (Brazil)
 
-- Ernesto Miranda Solís         - (TEC :mexico:)
-- Tania Regina Ramírez Vázquez  - (TEC :mexico:)
-- José Andrés Rodríguez Ruiz    - (TEC :mexico:)
-- Victoria Rodríguez de León    - (TEC :mexico:)
-- Juan Antonio Mancera Velasco  - (TEC :mexico:)
-- Owen Rosales Castro           - (TEC :mexico:)
+- Ernesto Miranda Solís         - (TEC)
+- Tania Regina Ramírez Vázquez  - (TEC)
+- José Andrés Rodríguez Ruiz    - (TEC)
+- Victoria Rodríguez de León    - (TEC)
+- Juan Antonio Mancera Velasco  - (TEC)
+- Owen Rosales Castro           - (TEC)
 
-- Caio Graca Gomes              - (ITA :brazil:)
-- Henrique Fernandes Feitosa    - (ITA :brazil:)
-- Thomas Neto                   - (ITA :brazil:)
+- Caio Graca Gomes              - (ITA)
+- Henrique Fernandes Feitosa    - (ITA)
+- Thomas Neto                   - (ITA)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
