@@ -35,7 +35,7 @@
   <li><a href="#planning"> Planning </a></li>
   <li><a href="#collaborators"> Collaborators </a></li>
   <li><a href="https://github.com/users/ErnoMitrovic/projects/1"> Project </li>
-  <li><a href="https://github.com/users/ErnoMitrovic/projects/1"> YouTube Videos </li>
+  <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/YOUTUBE_VIDEOS.md"> YouTube Videos </li>
 </ol>
 
 <!-- ABOUT THE PROJECT -->
