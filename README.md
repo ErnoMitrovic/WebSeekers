@@ -8,7 +8,8 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-# GSL IoT Project
+# GSL IoT Project: WebSeekers Team
+<img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/DisasterManagementCycle.jpg" alt="WebSeekers Logo" width="65%"></a></p>
 
 <!-- PROJECT SHIELDS -->
 <!--
