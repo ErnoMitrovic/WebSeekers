@@ -37,14 +37,17 @@ import java.util.UUID;
 /**
  * <h1>Main Activity</h1>
  * <p>Class that enables the main activity</p>
+ *
  * @author ErnoMitrovic <a>https://github.com/ErnoMitrovic</a>
  * @version 1.0
  * @since 21/11/2022
- * */
+ */
 public class MainActivity extends AppCompatActivity {
     private String location;
     private ActivityMainBinding mainBinding;
     private static String UNIQUE_ID;
+    private static final String TOPIC = "rescues/severity";
+    private static final long UPDATE_RATE = 10_000L;
     private Paho paho;
     private LocationRequest locationRequest;
     private Handler handler;
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * On start method used to ser active to true.
-     * */
+     */
     @Override
     protected void onStart() {
         active = true;
@@ -65,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * On stop method used to set active to false. */
+     * On stop method used to set active to false.
+     */
     @Override
     protected void onStop() {
         active = false;
@@ -74,8 +78,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Method used to create and inflate the views, here, the on click listeners are also set.
+     *
      * @param savedInstanceState if the user exits the app.
-     * */
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,13 +100,13 @@ public class MainActivity extends AppCompatActivity {
             String port = mainBinding.brokerPort.getText().toString();
             String broker = "tcp://" + ip + ":" + port;
             Log.d("Broker", broker);
-            try{
+            try {
                 UNIQUE_ID = dbHandler.getUser();
-                paho = new Paho("emergency", broker, UNIQUE_ID);
-            } catch(CursorIndexOutOfBoundsException | IllegalArgumentException e){
+                paho = new Paho(TOPIC, broker, UNIQUE_ID);
+            } catch (CursorIndexOutOfBoundsException | IllegalArgumentException e) {
                 UNIQUE_ID = UUID.randomUUID().toString();
                 dbHandler.insertUser(UNIQUE_ID);
-                paho = new Paho("emergency", broker, UNIQUE_ID);
+                paho = new Paho(TOPIC, broker, UNIQUE_ID);
             }
             try {
                 paho.connect();
@@ -121,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Used to set the location base on the user.
-     * */
+     */
     public void setLocation() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (getApplicationContext().
@@ -156,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Used to publish the messages to the broker
-     * */
+     */
     public void publish() {
         if (paho == null) return;
         String severity = "";
@@ -192,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Used to request the user to turn his location on.
-     * */
+     */
     private void turnOnLocation() {
         LocationSettingsRequest.Builder settingsBuilder = new LocationSettingsRequest.Builder()
                 .addLocationRequest(locationRequest);
@@ -223,8 +228,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Used to check the location permissions
+     *
      * @return the status of the location service.
-     * */
+     */
     private boolean isLocationEnable() {
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
@@ -232,10 +238,11 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Request permission results callback
-     * @param requestCode the requested code.
-     * @param permissions the string of permissions.
+     *
+     * @param requestCode  the requested code.
+     * @param permissions  the string of permissions.
      * @param grantResults the results granted.
-     * */
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
@@ -251,41 +258,44 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Used to disconnect the client.
-     * */
+     */
     @Override
     protected void onDestroy() {
-        if(paho != null) paho.disconnect();
+        if (paho != null) paho.disconnect();
         super.onDestroy();
     }
 
     /**
      * Class to instantiate a new thread to update the data.
-     * @see Thread
+     *
      * @author ErnoMitrovic <a>https://github.com/ErnoMitrovic</a>
      * @version 1.0
+     * @see Thread
      * @since 21/11/2022
-     * */
+     */
     private class SyncUpdate extends Thread {
+
         /**
          * Constructor for the SyncUpdate class
-         * */
-        public SyncUpdate(){
+         */
+        public SyncUpdate() {
             super();
             startTime = System.currentTimeMillis();
         }
+
         /**
          * The method to run for the Thread
-         * */
+         */
         @Override
         public void run() {
             long innerSleep = System.currentTimeMillis();
             System.out.println("Thread status " + active);
-            while(active) {
-                if(System.currentTimeMillis() >= innerSleep + 5_000) {
+            while (active) {
+                if (System.currentTimeMillis() >= innerSleep + 5_000) {
                     setLocation();
                     location = mainBinding.location.getText().toString();
                     handler.post(() -> {
-                        if (System.currentTimeMillis() >= 20_000 + startTime) {
+                        if (System.currentTimeMillis() >= UPDATE_RATE + startTime) {
                             publish();
                             startTime = System.currentTimeMillis();
                             Log.d("Thread", "publish");
