@@ -10,7 +10,7 @@ from paho.mqtt import client as mqtt_client
 
 broker = '20.249.56.79'
 port = 1884
-topic = "srv/temperature"
+topic = "rescues/severity"
 client_id = f'python-mqtt-{random.randint(0, 100)}'
 username = 's2'
 password = 's2987654321'
