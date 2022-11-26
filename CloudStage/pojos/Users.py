@@ -7,18 +7,18 @@ users_table_specs = [
 ]
 
 
-class Users:
+class User:
     def __init__(self, user_id="", last_update=time.strftime('%H:%M:%S')):
-        self.user_id = user_id
-        self.last_update = last_update
+        self._user_id = user_id
+        self._last_update = last_update
 
     @property
     def user_id(self):
-        return self.user_id
+        return self._user_id
 
     @property
     def last_update(self):
-        return self.last_update
+        return self._last_update
 
     @user_id.setter
     def user_id(self, value):

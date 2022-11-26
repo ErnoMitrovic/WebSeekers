@@ -9,16 +9,16 @@ locations_table_specs = [
 
 class Locations:
     def __init__(self, latitude="", longitude=""):
-        self.latitude = latitude
-        self.longitude = longitude
+        self._latitude = latitude
+        self._longitude = longitude
 
     @property
     def latitude(self):
-        return self.latitude
+        return self._latitude
 
     @property
     def longitude(self):
-        return self.longitude
+        return self._longitude
 
     @latitude.setter
     def latitude(self, value):

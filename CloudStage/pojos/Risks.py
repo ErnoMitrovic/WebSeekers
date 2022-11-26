@@ -9,16 +9,16 @@ risks_table_specs = [
 
 class Users:
     def __init__(self, severity="", risk=""):
-        self.severity = severity
-        self.risk = risk
+        self._severity = severity
+        self._risk = risk
 
     @property
     def severity(self):
-        return self.severity
+        return self._severity
 
     @property
     def risk(self):
-        return self.risk
+        return self._risk
 
     @severity.setter
     def severity(self, value):

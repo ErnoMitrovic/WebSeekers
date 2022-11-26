@@ -4,6 +4,7 @@ A nice tutorial is here: https://pypi.org/project/paho-mqtt/
 '''
 import random
 from getpass import getpass
+import socket
 
 import mysql.connector
 
@@ -11,7 +12,7 @@ import mysql_utils as db_manager
 
 from paho.mqtt import client as mqtt_client
 
-broker = '20.196.203.144'
+broker = socket.gethostbyname(socket.gethostname())
 port = 1884
 topic = "rescues/severity"
 client_id = f'python-mqtt-{random.randint(0, 100)}'

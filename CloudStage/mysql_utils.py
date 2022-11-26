@@ -12,7 +12,7 @@ def open_connection(db_name, u, p):
             host="localhost",
             database=db_name
         )
-        print("Connection started")
+        print("Connection with database started")
         return connection
     except mysql.connector.Error as err:
         if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
