@@ -52,6 +52,7 @@ def subscribe(client: mqtt_client, connection: mysql.connector.connection):
 def run():
     client = connect_mqtt()
     connection = connect_db()
+    db_manager.start_values(connection)
     subscribe(client, connection)
     client.loop_forever()
 
