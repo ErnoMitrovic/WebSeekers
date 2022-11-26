@@ -8,4 +8,5 @@
     <string name="medium_severity">Medium</string>
     <string name="high_severity">High</string>
     <string name="update">Update</string>
+    <string name="def_port">1883</string>
 </resources>

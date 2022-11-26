@@ -36,6 +36,7 @@
         android:ems="10"
         android:hint="@string/broker_port"
         android:inputType="number"
+        android:text="@string/def_port"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
