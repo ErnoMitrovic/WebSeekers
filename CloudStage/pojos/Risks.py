@@ -8,7 +8,7 @@ risks_table_specs = [
 
 
 class Users:
-    def __init__(self, severity="", risk="", latitude="", longitude=""):
+    def __init__(self, severity="", risk=""):
         self.severity = severity
         self.risk = risk
 
