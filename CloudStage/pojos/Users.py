@@ -9,7 +9,7 @@ users_table_specs = [
 
 
 class User:
-    def __init__(self, user_id="", last_update=datetime.datetime.now()):
+    def __init__(self, user_id="", last_update=datetime.datetime.now().strftime("%H:%M:%S")):
         self._user_id = user_id
         self._last_update = last_update
 
