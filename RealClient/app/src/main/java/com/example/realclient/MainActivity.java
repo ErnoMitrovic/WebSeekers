@@ -163,7 +163,10 @@ public class MainActivity extends AppCompatActivity {
      * Used to publish the messages to the broker
      */
     public void publish() {
-        if (paho == null) return;
+        if (paho == null) {
+            Toast.makeText(MainActivity.this, "NOT CONNECTED", Toast.LENGTH_SHORT).show();
+            return;
+        }
         String severity = "";
         for (int i = 0; i < mainBinding.severities.getChildCount(); i++) {
             View v = mainBinding.severities.getChildAt(i);
