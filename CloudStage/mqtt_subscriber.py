@@ -44,15 +44,14 @@ def update_user(connection: mysql.connector.connection, user_id: str):
 
 def update_severity(connection: mysql.connector.connection, user_id: str, severity):
     cursor = connection.cursor()
-    cursor.execute("SELECT severity FROM risks WHERE user_id=\"%s\"", [user_id])
+    cursor.execute("SELECT severity FROM risks WHERE user_id=\"{}\"".format(user_id))
     severity_saved: str = cursor.fetchone()
     if severity_saved is None:
         update_user(connection, user_id)
     if severity_saved != severity:
         update_user(connection, user_id)
-    cursor.execute("SELECT last_update FROM users WHERE user_id=\"%s\"", [user_id])
+    cursor.execute("SELECT last_update FROM users WHERE user_id=\"{}\"".format(user_id))
     last_update = cursor.fetchone()
-    cursor.close()
     risk_obj = Risks.Risk(severity, "")
     delta = datetime.datetime.now() - last_update[0]
     if severity_saved == "medium" and severity == "medium":
@@ -62,12 +61,26 @@ def update_severity(connection: mysql.connector.connection, user_id: str, severi
             risk_obj.risk = "medium"
     else:
         risk_obj.risk = severity
-    db_manager.update_values(connection, "risks", risk_obj, f'user_id=\"{user_id}\"')
+    query = "SELECT EXISTS(SELECT * FROM users WHERE user_id=\"{}\")".format(user_id)
+    cursor.execute(query)
+    exists = cursor.fetchone()
+    if bool(exists):
+        db_manager.update_values(connection, "risks", risk_obj, f'user_id=\"{user_id}\"')
+    else:
+        db_manager.add_values(connection, "risks", risk_obj)
+    cursor.close()
 
 
 def update_location(connection: mysql.connector.connection, user_id, lat, lon):
+    cursor = connection.cursor()
+    query = "SELECT EXISTS(SELECT * FROM users WHERE user_id=\"{}\")".format(user_id)
+    cursor.execute(query)
+    exists = cursor.fetchone()
     location = Locations.Location(lat, lon)
-    db_manager.update_values(connection, "locations", location, f'user_id=\"{user_id}\"')
+    if bool(exists):
+        db_manager.update_values(connection, "locations", location, f'user_id=\"{user_id}\"')
+    else:
+        db_manager.add_values(connection, "locations", location)
 
 
 def connect_mqtt() -> mqtt_client:
@@ -90,6 +103,8 @@ def subscribe(client: mqtt_client, connection: mysql.connector.connection):
         # user_id:severity:location
         message = str(msg.payload.decode("utf-8")).split(sep=':')
         location = message[2].split(sep=',')
+        print("Message", message)
+        print("Location", location)
         update_severity(connection, message[0], message[1])
         update_location(connection, message[0], location[0], location[1])
 
