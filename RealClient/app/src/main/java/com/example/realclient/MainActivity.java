@@ -102,8 +102,14 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Broker", broker);
             try {
                 UNIQUE_ID = dbHandler.getUser();
+                if(UNIQUE_ID.isEmpty()) {
+                    UNIQUE_ID = UUID.randomUUID().toString();
+                    dbHandler.insertUser(UNIQUE_ID);
+                }
                 paho = new Paho(TOPIC, broker, UNIQUE_ID);
+                Log.d("IM HERE", "GETTING UID: " + UNIQUE_ID);
             } catch (CursorIndexOutOfBoundsException | IllegalArgumentException e) {
+                Log.d("IM HERE", "CREATING UID: " + UNIQUE_ID);
                 UNIQUE_ID = UUID.randomUUID().toString();
                 dbHandler.insertUser(UNIQUE_ID);
                 paho = new Paho(TOPIC, broker, UNIQUE_ID);
@@ -228,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+// 20.196.203.144
     /**
      * Used to check the location permissions
      *
