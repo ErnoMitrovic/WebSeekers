@@ -46,13 +46,11 @@ def update_severity(connection: mysql.connector.connection, user_id: str, severi
     cursor = connection.cursor()
     cursor.execute("SELECT severity FROM risks WHERE user_id=\"{}\"".format(user_id))
     severity_saved: str = cursor.fetchone()
-    if severity_saved is None:
-        update_user(connection, user_id)
     if severity_saved != severity:
         update_user(connection, user_id)
     cursor.execute("SELECT last_update FROM users WHERE user_id=\"{}\"".format(user_id))
     last_update = cursor.fetchone()
-    risk_obj = Risks.Risk(severity, "")
+    risk_obj = Risks.Risk(user_id, severity, "")
     delta = datetime.datetime.now() - last_update[0]
     if severity_saved == "medium" and severity == "medium":
         if delta.minute >= 20:
@@ -61,10 +59,10 @@ def update_severity(connection: mysql.connector.connection, user_id: str, severi
             risk_obj.risk = "medium"
     else:
         risk_obj.risk = severity
-    query = "SELECT EXISTS(SELECT * FROM users WHERE user_id=\"{}\")".format(user_id)
+    query = "SELECT EXISTS(SELECT * FROM risks WHERE user_id=\"{}\")".format(user_id)
     cursor.execute(query)
     exists = cursor.fetchone()
-    if bool(exists):
+    if bool(exists[0]):
         db_manager.update_values(connection, "risks", risk_obj, f'user_id=\"{user_id}\"')
     else:
         db_manager.add_values(connection, "risks", risk_obj)
@@ -73,11 +71,11 @@ def update_severity(connection: mysql.connector.connection, user_id: str, severi
 
 def update_location(connection: mysql.connector.connection, user_id, lat, lon):
     cursor = connection.cursor()
-    query = "SELECT EXISTS(SELECT * FROM users WHERE user_id=\"{}\")".format(user_id)
+    query = "SELECT EXISTS(SELECT * FROM locations WHERE user_id=\"{}\")".format(user_id)
     cursor.execute(query)
     exists = cursor.fetchone()
-    location = Locations.Location(lat, lon)
-    if bool(exists):
+    location = Locations.Location(user_id, lat, lon)
+    if bool(exists[0]):
         db_manager.update_values(connection, "locations", location, f'user_id=\"{user_id}\"')
     else:
         db_manager.add_values(connection, "locations", location)

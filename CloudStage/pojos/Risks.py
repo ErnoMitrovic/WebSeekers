@@ -8,9 +8,18 @@ risks_table_specs = [
 
 
 class Risk:
-    def __init__(self, severity="", risk=""):
+    def __init__(self, user_id="", severity="", risk=""):
+        self._user_id = user_id
         self._severity = severity
         self._risk = risk
+
+    @property
+    def user_id(self):
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, value):
+        self._user_id = value
 
     @property
     def severity(self):

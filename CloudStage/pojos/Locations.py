@@ -8,9 +8,18 @@ locations_table_specs = [
 
 
 class Location:
-    def __init__(self, latitude="", longitude=""):
+    def __init__(self, user_id="", latitude="", longitude=""):
+        self._user_id = user_id;
         self._latitude = latitude
         self._longitude = longitude
+
+    @property
+    def user_id(self):
+        return self._user_id
+
+    @user_id.setter
+    def user_id(self, value):
+        self._user_id = value
 
     @property
     def latitude(self):
