@@ -5,7 +5,7 @@ A nice tutorial is here: https://pypi.org/project/paho-mqtt/
 import random
 from getpass import getpass
 import socket
-from pojos import Users, Risks, Locations
+from pojos import Users, Risks, Locations, SeverityCount, RiskCount
 
 import mysql.connector
 import datetime
@@ -66,6 +66,32 @@ def update_severity(connection: mysql.connector.connection, user_id: str, severi
         db_manager.update_values(connection, "risks", risk_obj, f'user_id=\"{user_id}\"')
     else:
         db_manager.add_values(connection, "risks", risk_obj)
+    cursor.close()
+
+
+def update_counts(connection: mysql.connector.connection):
+    types = ["Low", "Medium", "High"]
+    cursor = connection.cursor()
+    for sev in types:
+        query = f' INSERT INTO sev_count SELECT "{sev}", (SELECT COUNT(*) FROM risks WHERE severity="{sev}") WHERE ' \
+                f'NOT EXISTS (SELECT * FROM sev_count WHERE sev_type = "{sev}") ;'
+        cursor.execute(query)
+    connection.commit()
+    for risk in types:
+        query = f' INSERT INTO risk_count SELECT "{risk}", (SELECT COUNT(*) FROM risks WHERE risk="{risk}") WHERE ' \
+                f'NOT EXISTS (SELECT * FROM risk_count WHERE risk_type = "{risk}") ;'
+        cursor.execute(query)
+    connection.commit()
+    for sev in types:
+        query = f'UPDATE sev_count SET sev_count=(SELECT COUNT(*) FROM risks WHERE severity="{sev}")' \
+                f' WHERE sev_type="{sev}"'
+        cursor.execute(query)
+    connection.commit()
+    for risk in types:
+        query = f'UPDATE risk_count SET risk_count=(SELECT COUNT(*) FROM risks WHERE risk="{risk}") ' \
+                f'WHERE risk_type="{risk}"'
+        cursor.execute(query)
+    connection.commit()
     cursor.close()
 
 
