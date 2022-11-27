@@ -31,10 +31,11 @@ def connect_db() -> mysql.connector.connection:
 
 def update_user(connection: mysql.connector.connection, user_id: str):
     cursor = connection.cursor()
-    cursor.execute("SELECT EXISTS(SELECT * FROM users WHERE user_id=\"%s\")", [user_id])
+    query = "SELECT EXISTS(SELECT * FROM users WHERE user_id=\"{}\")".format(user_id)
+    cursor.execute(query)
     cond = cursor.fetchone()
     user = Users.User(user_id)
-    if cond[0]:
+    if bool(cond[0]):
         db_manager.update_values(connection, "users", user, f'user_id=\"{user_id}\"')
     else:
         db_manager.add_values(connection, "users", user)

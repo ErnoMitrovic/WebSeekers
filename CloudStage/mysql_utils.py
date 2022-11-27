@@ -66,7 +66,7 @@ def update_values(connection: mysql.connector.connection, table_name, val, delim
     vals = list(utils.get_values_pojo(val).values())
     vals_to_update = ""
     for i in range(len(keys)):
-        vals_to_update += keys[i] + "=" + vals[i] + ", "
+        vals_to_update += keys[i] + "=\"" + vals[i] + "\", "
     vals_to_update = vals_to_update[:-2]
     query = "UPDATE {0} SET {1} WHERE {2}".format(table_name, vals_to_update, delimiters)
     print(query)
