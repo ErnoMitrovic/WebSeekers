@@ -45,11 +45,13 @@ def update_severity(connection: mysql.connector.connection, user_id: str, severi
     cursor = connection.cursor()
     cursor.execute("SELECT severity FROM risks WHERE user_id=\"%s\"", [user_id])
     severity_saved: str = cursor.fetchone()
+    if severity_saved is None:
+        update_user(connection, user_id)
+    if severity_saved != severity:
+        update_user(connection, user_id)
     cursor.execute("SELECT last_update FROM users WHERE user_id=\"%s\"", [user_id])
     last_update = cursor.fetchone()
     cursor.close()
-    if severity_saved != severity:
-        update_user(connection, user_id)
     risk_obj = Risks.Risk(severity, "")
     delta = datetime.datetime.now() - last_update[0]
     if severity_saved == "medium" and severity == "medium":
