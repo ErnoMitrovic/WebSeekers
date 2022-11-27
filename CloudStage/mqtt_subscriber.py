@@ -31,21 +31,21 @@ def connect_db() -> mysql.connector.connection:
 
 def update_user(connection: mysql.connector.connection, user_id: str):
     cursor = connection.cursor()
-    cursor.execute("SELECT EXISTS(SELECT * FROM users WHERE user_id=%s)", user_id)
+    cursor.execute("SELECT EXISTS(SELECT * FROM users WHERE user_id=\"%s\")", [user_id])
     cond = cursor.fetchone()
-    cursor.close()
     user = Users.User(user_id)
     if cond[0]:
-        db_manager.update_values(connection, "users", user, f'user_id={user_id}')
+        db_manager.update_values(connection, "users", user, f'user_id=\"{user_id}\"')
     else:
         db_manager.add_values(connection, "users", user)
+    cursor.close()
 
 
 def update_severity(connection: mysql.connector.connection, user_id: str, severity):
     cursor = connection.cursor()
-    cursor.execute("SELECT severity FROM risk WHERE user_id=%s", user_id)
+    cursor.execute("SELECT severity FROM risks WHERE user_id=\"%s\"", [user_id])
     severity_saved: str = cursor.fetchone()
-    cursor.execute("SELECT last_update FROM users WHERE user_id=%s", user_id)
+    cursor.execute("SELECT last_update FROM users WHERE user_id=\"%s\"", [user_id])
     last_update = cursor.fetchone()
     cursor.close()
     if severity_saved != severity:
@@ -59,12 +59,12 @@ def update_severity(connection: mysql.connector.connection, user_id: str, severi
             risk_obj.risk = "medium"
     else:
         risk_obj.risk = severity
-    db_manager.update_values(connection, "risk", risk_obj, f'user_id={user_id}')
+    db_manager.update_values(connection, "risks", risk_obj, f'user_id=\"{user_id}\"')
 
 
 def update_location(connection: mysql.connector.connection, user_id, lat, lon):
     location = Locations.Location(lat, lon)
-    db_manager.update_values(connection, "location", location, f'user_id={user_id}')
+    db_manager.update_values(connection, "locations", location, f'user_id=\"{user_id}\"')
 
 
 def connect_mqtt() -> mqtt_client:

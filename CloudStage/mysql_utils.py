@@ -1,6 +1,6 @@
 import mysql.connector
 from mysql.connector import errorcode
-from pojos import Users, Risks
+from pojos import Users, Risks, Locations
 import utils
 
 
@@ -26,7 +26,8 @@ def open_connection(db_name, u, p):
 def start_values(connection: mysql.connector.connection):
     table_names = [
         ["users", Users.users_table_specs],
-        ["risks", Risks.risks_table_specs]
+        ["risks", Risks.risks_table_specs],
+        ["locations", Locations.locations_table_specs]
     ]
     for table_name, table_specs in table_names:
         create_table(connection, table_name, table_specs)
