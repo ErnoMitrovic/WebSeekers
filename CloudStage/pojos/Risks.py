@@ -7,7 +7,7 @@ risks_table_specs = [
 ]
 
 
-class Users:
+class Risk:
     def __init__(self, severity="", risk=""):
         self._severity = severity
         self._risk = risk

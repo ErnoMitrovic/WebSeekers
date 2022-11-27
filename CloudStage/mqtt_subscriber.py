@@ -5,8 +5,10 @@ A nice tutorial is here: https://pypi.org/project/paho-mqtt/
 import random
 from getpass import getpass
 import socket
+from pojos import Users, Risks, Locations
 
 import mysql.connector
+import datetime
 
 import mysql_utils as db_manager
 
@@ -27,6 +29,44 @@ def connect_db() -> mysql.connector.connection:
     return db_manager.open_connection(db_name, user_db, pass_db)
 
 
+def update_user(connection: mysql.connector.connection, user_id: str):
+    cursor = connection.cursor()
+    cursor.execute("SELECT EXISTS(SELECT * FROM users WHERE user_id=%s)", user_id)
+    cond = cursor.fetchone()
+    cursor.close()
+    user = Users.User(user_id)
+    if cond[0]:
+        db_manager.update_values(connection, "users", user, f'user_id={user_id}')
+    else:
+        db_manager.add_values(connection, "users", user)
+
+
+def update_severity(connection: mysql.connector.connection, user_id: str, severity):
+    cursor = connection.cursor()
+    cursor.execute("SELECT severity FROM risk WHERE user_id=%s", user_id)
+    severity_saved: str = cursor.fetchone()
+    cursor.execute("SELECT last_update FROM users WHERE user_id=%s", user_id)
+    last_update = cursor.fetchone()
+    cursor.close()
+    if severity_saved != severity:
+        update_user(connection, user_id)
+    risk_obj = Risks.Risk(severity, "")
+    delta = datetime.datetime.now() - last_update[0]
+    if severity_saved == "medium" and severity == "medium":
+        if delta.minute >= 20:
+            risk_obj.risk = "high"
+        else:
+            risk_obj.risk = "medium"
+    else:
+        risk_obj.risk = severity
+    db_manager.update_values(connection, "risk", risk_obj, f'user_id={user_id}')
+
+
+def update_location(connection: mysql.connector.connection, user_id, lat, lon):
+    location = Locations.Location(lat, lon)
+    db_manager.update_values(connection, "location", location, f'user_id={user_id}')
+
+
 def connect_mqtt() -> mqtt_client:
     def on_connect(client, userdata, flags, rc):
         if rc == 0:
@@ -44,6 +84,11 @@ def connect_mqtt() -> mqtt_client:
 def subscribe(client: mqtt_client, connection: mysql.connector.connection):
     def on_message(client, userdata, msg):
         print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
+        # user_id:severity:location
+        message = str(msg.payload.decode("utf-8")).split(sep=':')
+        location = message[2].split(sep=',')
+        update_severity(connection, message[0], message[1])
+        update_location(connection, message[0], location[0], location[1])
 
     client.subscribe(topic)
     client.on_message = on_message
@@ -57,4 +102,5 @@ def run():
     client.loop_forever()
 
 
-run()
+if __name__ == "__main__":
+    run()

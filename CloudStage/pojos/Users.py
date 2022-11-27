@@ -1,3 +1,4 @@
+import datetime
 import time
 
 users_table_specs = [
@@ -8,7 +9,7 @@ users_table_specs = [
 
 
 class User:
-    def __init__(self, user_id="", last_update=time.strftime('%H:%M:%S')):
+    def __init__(self, user_id="", last_update=datetime.datetime.now()):
         self._user_id = user_id
         self._last_update = last_update
 

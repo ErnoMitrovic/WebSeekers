@@ -7,7 +7,7 @@ locations_table_specs = [
 ]
 
 
-class Locations:
+class Location:
     def __init__(self, latitude="", longitude=""):
         self._latitude = latitude
         self._longitude = longitude
