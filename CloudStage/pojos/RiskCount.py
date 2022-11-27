@@ -1,6 +1,6 @@
 risk_count_table_specs = [
     ["risk_type", "VARCHAR(10)", "NOT NULL"],
-    ["risk_c", "TIME"],
+    ["risk_c", "INT"],
     ["PRIMARY KEY (risk_type)"]
 ]
 

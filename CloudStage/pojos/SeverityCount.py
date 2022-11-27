@@ -1,6 +1,6 @@
 severity_count_table_specs = [
     ["sev_type", "VARCHAR(10)", "NOT NULL"],
-    ["sev_c", "TIME"],
+    ["sev_c", "INT"],
     ["PRIMARY KEY (sev_type)"]
 ]
 

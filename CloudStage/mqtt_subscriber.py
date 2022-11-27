@@ -73,22 +73,22 @@ def update_counts(connection: mysql.connector.connection):
     types = ["Low", "Medium", "High"]
     cursor = connection.cursor()
     for sev in types:
-        query = f' INSERT INTO sev_count SELECT "{sev}", (SELECT COUNT(*) FROM risks WHERE severity="{sev}") WHERE ' \
-                f'NOT EXISTS (SELECT * FROM sev_count WHERE sev_type = "{sev}") ;'
+        query = f' INSERT INTO sev_count SELECT "{sev}", (SELECT COUNT(severity) FROM risks WHERE severity="{sev}") ' \
+                f' WHERE NOT EXISTS (SELECT * FROM sev_count WHERE sev_type = "{sev}") ;'
         cursor.execute(query)
     connection.commit()
     for risk in types:
-        query = f' INSERT INTO risk_count SELECT "{risk}", (SELECT COUNT(*) FROM risks WHERE risk="{risk}") WHERE ' \
+        query = f' INSERT INTO risk_count SELECT "{risk}", (SELECT COUNT(risk) FROM risks WHERE risk="{risk}") WHERE ' \
                 f'NOT EXISTS (SELECT * FROM risk_count WHERE risk_type = "{risk}") ;'
         cursor.execute(query)
     connection.commit()
     for sev in types:
-        query = f'UPDATE sev_count SET sev_count=(SELECT COUNT(*) FROM risks WHERE severity="{sev}")' \
+        query = f'UPDATE sev_count SET sev_c=(SELECT COUNT(severity) FROM risks WHERE severity="{sev}")' \
                 f' WHERE sev_type="{sev}"'
         cursor.execute(query)
     connection.commit()
     for risk in types:
-        query = f'UPDATE risk_count SET risk_count=(SELECT COUNT(*) FROM risks WHERE risk="{risk}") ' \
+        query = f'UPDATE risk_count SET risk_c=(SELECT COUNT(risk) FROM risks WHERE risk="{risk}") ' \
                 f'WHERE risk_type="{risk}"'
         cursor.execute(query)
     connection.commit()
@@ -131,6 +131,7 @@ def subscribe(client: mqtt_client, connection: mysql.connector.connection):
         print("Location", location)
         update_severity(connection, message[0], message[1])
         update_location(connection, message[0], location[0], location[1])
+        update_counts(connection)
 
     client.subscribe(topic)
     client.on_message = on_message
