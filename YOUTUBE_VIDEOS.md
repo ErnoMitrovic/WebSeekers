@@ -14,4 +14,4 @@
 ## :cloud: Cloud Stage
 <p align="justify"> Clic on the image</p>
 
-<p align="center" width="100%"><a name = "CloudStage" href="https://youtu.be/zZt_4ABf1J0"><img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/Message_Broker.png" alt="Cloud Stage YouTube Video" width="65%"></a></p>
+<p align="center" width="100%"><a name = "CloudStage" href="https://youtu.be/zZt_4ABf1J0"><img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/Cloud_Stage.png" alt="Cloud Stage YouTube Video" width="65%"></a></p>
