@@ -88,9 +88,6 @@ For instance, if the local infrastructure is affected and there are no telecommu
 - Juan Antonio Mancera Velasco  - (TEC)
 - Owen Rosales Castro           - (TEC)
 
-- Caio Graca Gomes              - (ITA)
-- Henrique Fernandes Feitosa    - (ITA)
-- Thomas Neto                   - (ITA)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
