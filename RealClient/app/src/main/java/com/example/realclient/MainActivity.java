@@ -64,6 +64,21 @@ public class MainActivity extends AppCompatActivity {
         active = true;
         update = new SyncUpdate();
         update.start();
+        if(paho != null && !paho.checkConnection()){
+            try {
+                paho.connect();
+            } catch (MqttException e) {
+                System.out.println("reason " + e.getReasonCode());
+                System.out.println("msg " + e.getMessage());
+                System.out.println("loc " + e.getLocalizedMessage());
+                System.out.println("cause " + e.getCause());
+                System.out.println("except " + e);
+                e.printStackTrace();
+                Log.d("Exception", e.getMessage());
+                Toast.makeText(MainActivity.this, "Could not connect", Toast.LENGTH_LONG).show();
+            }
+        }
+        Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_SHORT).show();
         super.onStart();
     }
 
@@ -84,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // active = true;
         mainBinding = ActivityMainBinding.inflate(getLayoutInflater());
         View mainView = mainBinding.getRoot();
         setContentView(mainView);
@@ -103,9 +117,7 @@ public class MainActivity extends AppCompatActivity {
             try {
                 UNIQUE_ID = dbHandler.getUser();
                 paho = new Paho(TOPIC, broker, UNIQUE_ID);
-                Log.d("IM HERE", "GETTING UID: " + UNIQUE_ID);
             } catch (CursorIndexOutOfBoundsException | IllegalArgumentException e) {
-                Log.d("IM HERE", "CREATING UID: " + UNIQUE_ID);
                 UNIQUE_ID = UUID.randomUUID().toString();
                 dbHandler.insertUser(UNIQUE_ID);
                 paho = new Paho(TOPIC, broker, UNIQUE_ID);
@@ -122,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Exception", e.getMessage());
                 Toast.makeText(MainActivity.this, "Could not connect", Toast.LENGTH_LONG).show();
             }
+            Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_SHORT).show();
         });
         mainBinding.update.setOnClickListener(view -> publish());
     }
@@ -165,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
      * Used to publish the messages to the broker
      */
     public void publish() {
-        if (paho == null) {
+        if (paho == null || !paho.checkConnection()) {
             Toast.makeText(MainActivity.this, "NOT CONNECTED", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -197,6 +210,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Exception", e.getMessage());
                 Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
             }
+            Toast.makeText(MainActivity.this, "Message sent", Toast.LENGTH_SHORT).show();
         }
     }
 
