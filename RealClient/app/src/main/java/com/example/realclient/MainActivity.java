@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         active = true;
         update = new SyncUpdate();
         update.start();
-        if(paho != null && !paho.checkConnection()){
+        if(paho != null && !paho.checkConnection()) {
             try {
                 paho.connect();
             } catch (MqttException e) {
@@ -77,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("Exception", e.getMessage());
                 Toast.makeText(MainActivity.this, "Could not connect", Toast.LENGTH_LONG).show();
             }
+            Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(MainActivity.this, "Connected", Toast.LENGTH_SHORT).show();
         super.onStart();
     }
 
@@ -116,6 +116,10 @@ public class MainActivity extends AppCompatActivity {
             Log.d("Broker", broker);
             try {
                 UNIQUE_ID = dbHandler.getUser();
+                if(UNIQUE_ID.isEmpty()){
+                    UNIQUE_ID = UUID.randomUUID().toString();
+                    dbHandler.insertUser(UNIQUE_ID);
+                }
                 paho = new Paho(TOPIC, broker, UNIQUE_ID);
             } catch (CursorIndexOutOfBoundsException | IllegalArgumentException e) {
                 UNIQUE_ID = UUID.randomUUID().toString();
