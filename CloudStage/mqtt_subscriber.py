@@ -48,7 +48,7 @@ def update_severity(connection: mysql.connector.connection, user_id: str, severi
     cursor = connection.cursor()
     cursor.execute("SELECT severity FROM risks WHERE user_id=\"{}\"".format(user_id))
     severity_saved: str = cursor.fetchone()
-    if severity_saved[0] != severity:
+    if severity_saved is None or severity_saved[0] != severity:
         update_user(connection, user_id)
     cursor.execute("SELECT last_update FROM users WHERE user_id=\"{}\"".format(user_id))
     last_update = cursor.fetchone()
