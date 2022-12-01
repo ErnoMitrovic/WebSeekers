@@ -32,6 +32,7 @@
   <li><a href="#about-the-project"> About the project </a></li>
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/REQUIREMENTS.md" target="_blank"> Requirements and Motivation </a></li>
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/USER_STORIES.md" target="_blank"> User Stories </a></li>
+  <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/INTERACTION_DESIGN.md" target="_blank"> Interaction Design </a></li>
   <li><a href="https://github.com/users/ErnoMitrovic/projects/1"> Project </li>
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/YOUTUBE_VIDEOS.md"> YouTube Videos </li>
 </ol>
@@ -88,9 +89,6 @@ For instance, if the local infrastructure is affected and there are no telecommu
 - Juan Antonio Mancera Velasco  - (TEC)
 - Owen Rosales Castro           - (TEC)
 
-- Caio Graca Gomes              - (ITA)
-- Henrique Fernandes Feitosa    - (ITA)
-- Thomas Neto                   - (ITA)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
