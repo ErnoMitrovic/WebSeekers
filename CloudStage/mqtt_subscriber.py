@@ -25,7 +25,7 @@ password = 's2987654321'
 def connect_db() -> mysql.connector.connection:
     user_db = input("Write username: ")
     pass_db = getpass()
-    db_name = input("Database name: ")
+    db_name = "rescues"
     return db_manager.open_connection(db_name, user_db, pass_db)
 
 
@@ -34,7 +34,9 @@ def update_user(connection: mysql.connector.connection, user_id: str):
     query = "SELECT EXISTS(SELECT * FROM users WHERE user_id=\"{}\")".format(user_id)
     cursor.execute(query)
     cond = cursor.fetchone()
-    user = Users.User(user_id)
+    cursor.execute("SELECT severity FROM risks WHERE user_id=\"{}\"".format(user_id))
+    severity_saved: str = cursor.fetchone()
+    user = Users.User(user_id, datetime.datetime.now().strftime("%H:%M:%S"))
     if bool(cond[0]):
         db_manager.update_values(connection, "users", user, f'user_id=\"{user_id}\"')
     else:
@@ -46,7 +48,7 @@ def update_severity(connection: mysql.connector.connection, user_id: str, severi
     cursor = connection.cursor()
     cursor.execute("SELECT severity FROM risks WHERE user_id=\"{}\"".format(user_id))
     severity_saved: str = cursor.fetchone()
-    if severity_saved != severity:
+    if severity_saved[0] != severity:
         update_user(connection, user_id)
     cursor.execute("SELECT last_update FROM users WHERE user_id=\"{}\"".format(user_id))
     last_update = cursor.fetchone()
@@ -73,8 +75,8 @@ def update_counts(connection: mysql.connector.connection):
     types = ["Low", "Medium", "High"]
     cursor = connection.cursor()
     for sev in types:
-        query = f' INSERT INTO sev_count SELECT "{sev}", (SELECT COUNT(severity) FROM risks WHERE severity="{sev}") ' \
-                f' WHERE NOT EXISTS (SELECT * FROM sev_count WHERE sev_type = "{sev}") ;'
+        query = f' INSERT INTO sev_count SELECT "{sev}", (SELECT COUNT(severity) FROM risks WHERE severity="{sev}") WHERE ' \
+                f'NOT EXISTS (SELECT * FROM sev_count WHERE sev_type = "{sev}") ;'
         cursor.execute(query)
     connection.commit()
     for risk in types:
@@ -120,7 +122,6 @@ def connect_mqtt() -> mqtt_client:
     client.connect(broker, port)
     return client
 
-
 def subscribe(client: mqtt_client, connection: mysql.connector.connection):
     def on_message(client, userdata, msg):
         print(f"Received `{msg.payload.decode()}` from `{msg.topic}` topic")
@@ -137,13 +138,12 @@ def subscribe(client: mqtt_client, connection: mysql.connector.connection):
     client.on_message = on_message
 
 
-def run():
+def run(connection):
     client = connect_mqtt()
-    connection = connect_db()
-    db_manager.start_values(connection)
     subscribe(client, connection)
     client.loop_forever()
 
-
 if __name__ == "__main__":
-    run()
+    connection = connect_db()
+    db_manager.start_values(connection)
+    run(connection)
