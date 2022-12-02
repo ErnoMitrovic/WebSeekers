@@ -46,6 +46,22 @@ In order to start the broker, you must:
 </ol>
 
 ## :cloud: Cloud Stage
+### Prerequisites
+<ul>
+ <li>Have mysql client</li>
+</ul>
+
+~~~
+sudo apt-get update
+sudo apt-get mysql-client
+sudo apt install mysql-server
+sudo systemctl start mysql.service
+sudo mysql_secure_installation
+~~~
+
+To start as default, do the following command
+`sudo systemctl enable mysql.service`
+
 In order to start the broker, you must: 
  <ol>
   <li>Download the <a href="https://github.com/ErnoMitrovic/WebSeekers/tree/main/CloudStage" target="_blank"> Cloud Stage </a>folder</li>
