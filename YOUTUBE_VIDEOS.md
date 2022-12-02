@@ -19,4 +19,4 @@
 ## :mortar_board: Workshop
 <p align="justify"> Clic on the image</p>
 
-<p align="center" width="100%"><a name = "Workshop" href="https://youtu.be/zZt_4ABf1J0"><img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/WorkshopImage.png" alt="Workshop YouTube Video" width="65%"></a></p>
+<p align="center" width="100%"><a name = "Workshop" href="https://youtu.be/k8VSxMo3bD8"><img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/WorkshopImage.png" alt="Workshop YouTube Video" width="65%"></a></p>
