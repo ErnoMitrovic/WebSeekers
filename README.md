@@ -81,7 +81,6 @@ For instance, if the local infrastructure is affected and there are no telecommu
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # 🤝🏻 Collaborators <a name = "collaborators"></a>
-### TEC (Mexico) & ITA (Brazil)
 
 - Ernesto Miranda Solís         - (TEC)
 - Tania Regina Ramírez Vázquez  - (TEC)
