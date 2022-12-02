@@ -26,7 +26,7 @@
 
 ## :iphone: Client Stage
 In order to get ready with the app, you must: 
-    - Navigate through releases: <a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/FOR_END_USERS.md"> For End-Users 
+    - Navigate through releases: <a href="https://github.com/ErnoMitrovic/WebSeekers/releases"> For End-Users 
  <ol>
   <li>Navigate through <a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/REQUIREMENTS.md" target="_blank"> releases </a></li>
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/REQUIREMENTS.md" target="_blank"> Requirements and Motivation </a></li>
