@@ -80,6 +80,13 @@ For instance, if the local infrastructure is affected and there are no telecommu
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+# :mag_right: References
+<ol>
+  <li>Ritchie, H., & Roser, M. (2014, June 3). Natural Disasters. Our World in Data. https://ourworldindata.org/natural-disasters#natural-disasters-kill-tens-of-thousands-each-year</li>
+  <li>‌Natural disasters in depth | MSF. (2016). Médecins sans Frontières (MSF) International. https://www.msf.org/natural-disasters-depth</li>
+  <li>kabartsjc. (2022). gsl-iot-2022. https://github.com/kabartsjc/gsl-iot-2022</a></li>
+</ol>
+
 # 🤝🏻 Collaborators <a name = "collaborators"></a>
 
 - Ernesto Miranda Solís         - (TEC)
