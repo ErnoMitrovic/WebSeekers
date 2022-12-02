@@ -27,6 +27,15 @@
 ## :iphone: Client Stage
 In order to get ready with the app, you must: 
     - Navigate through releases: <a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/FOR_END_USERS.md"> For End-Users 
+ <ol>
+  <li>Navigate through <a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/REQUIREMENTS.md" target="_blank"> releases </a></li>
+  <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/REQUIREMENTS.md" target="_blank"> Requirements and Motivation </a></li>
+  <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/USER_STORIES.md" target="_blank"> User Stories </a></li>
+  <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/INTERACTION_DESIGN.md" target="_blank"> Interaction Design </a></li>
+  <li><a href="https://github.com/users/ErnoMitrovic/projects/1"> Project </li>
+  <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/YOUTUBE_VIDEOS.md"> YouTube Videos </li>
+  <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/FOR_END_USERS.md"> For End-Users </li>
+</ol>
 
 ## :vibration_mode: Gateway / Edge Stage
 <p align="justify">Global Shared Learning: Classroom is an initiative that aims to link a course at the Tecnológico de Monterrey with a course at an associated international university, in this case the Instituto Tecnológico de Aeronáutica (ITA), through an international element, using technological tools to connect with others students, foster collaboration and facilitate learning in multicultural environments.
