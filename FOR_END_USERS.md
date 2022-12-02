@@ -28,7 +28,7 @@
 In order to get ready with the app, you must: 
     - Navigate through releases: <a href="https://github.com/ErnoMitrovic/WebSeekers/releases"> For End-Users 
  <ol>
-  <li>Navigate through <a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/REQUIREMENTS.md" target="_blank"> releases </a></li>
+  <li>Navigate through <a href="https://github.com/ErnoMitrovic/WebSeekers/releases" target="_blank"> releases </a></li>
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/REQUIREMENTS.md" target="_blank"> Requirements and Motivation </a></li>
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/USER_STORIES.md" target="_blank"> User Stories </a></li>
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/INTERACTION_DESIGN.md" target="_blank"> Interaction Design </a></li>
