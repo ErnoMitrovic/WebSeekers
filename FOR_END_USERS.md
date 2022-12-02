@@ -23,7 +23,7 @@
 
 <!-- ABOUT THE PROJECT -->
 # 🗂️ HOW TO COMPILE <a name = "about-the-project"></a>
-## Prerequisites
+## ⚙️ Prerequisites
 Adjust the requirements depending on the stage that you want to emulate.
 <ul>
  <li>Have an android device or emulator</li>
