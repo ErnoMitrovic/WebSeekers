@@ -23,6 +23,40 @@
 
 <!-- ABOUT THE PROJECT -->
 # 🗂️ HOW TO COMPILE <a name = "about-the-project"></a>
+## Prerequisites
+Adjust the requirements depending on the stage that you want to emulate.
+<ul>
+ <li>Have an android device or emulator</li>
+ <li>Have mosquitto broker</li>
+ 
+ ```
+ $ sudo apt update 
+ $ sudo apt install -y mosquitto
+ $ sudo systemctl start mosquitto
+ ```
+ 
+ <li>Have mysql client</li>
+ 
+ ~~~
+ $ sudo apt-get update
+ $ sudo apt-get mysql-client
+ $ sudo apt install mysql-server
+ $ sudo systemctl start mysql.service
+ $ sudo mysql_secure_installation
+ ~~~
+ 
+ <li>Have grafana service</li>
+ 
+ ```
+ $ sudo apt-get install -y adduser libfontconfig1
+ $ wget https://dl.grafana.com/enterprise/release/grafana-enterprise_9.3.1_amd64.deb
+ $ sudo dpkg -i grafana-enterprise_9.3.1_amd64.deb
+ $ sudo systemctl daemon-reload
+ $ sudo systemctl start grafana-server
+ ```
+</ul>
+
+To start a service as default on Ubuntu, do the following command `$ sudo systemctl enable {service_name}`
 
 ## :iphone: Client Stage
 In order to get ready with the app, you must: 
@@ -46,19 +80,6 @@ In order to start the broker, you must:
 </ol>
 
 ## :cloud: Cloud Stage
-### Prerequisites
-<ul>
- <li>Have mysql client</li>
-</ul>
-
-~~~
-sudo apt-get update
-sudo apt-get mysql-client
-sudo apt install mysql-server
-sudo systemctl start mysql.service
-sudo mysql_secure_installation
-~~~
-
 To start as default, do the following command
 `sudo systemctl enable mysql.service`
 
