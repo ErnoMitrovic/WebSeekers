@@ -82,7 +82,7 @@ For instance, if the local infrastructure is affected and there are no telecommu
 
 ## :chart_with_upwards_trend: Technical Architecture
 
-<p align="center" width="100%"><a name = "#arch"><img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/ArchitectureDiagram.jpg" width="65%"></a></p>
+<p align="center" width="100%"><a name = "Technical Architecture" href="https://youtu.be/ZpJ9pTAluqA"><img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/ArchitectureDiagram.jpg" alt="Technical Architecture" width="65%"></a></p>
 
 ## :mag_right: References
 <ol>
