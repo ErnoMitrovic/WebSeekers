@@ -35,6 +35,7 @@
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/INTERACTION_DESIGN.md" target="_blank"> Interaction Design </a></li>
   <li><a href="https://github.com/users/ErnoMitrovic/projects/1"> Project </li>
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/YOUTUBE_VIDEOS.md"> YouTube Videos </li>
+  <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/FOR_END_USERS.md"> For End-Users </li>
 </ol>
 
 <!-- ABOUT THE PROJECT -->
