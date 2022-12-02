@@ -25,12 +25,8 @@
 # 🗂️ HOW TO COMPILE <a name = "about-the-project"></a>
 
 ## :iphone: Client Stage
-- Ernesto Miranda Solís         - (TEC)
-- Tania Regina Ramírez Vázquez  - (TEC)
-- José Andrés Rodríguez Ruiz    - (TEC)
-- Victoria Rodríguez de León    - (TEC)
-- Juan Antonio Mancera Velasco  - (TEC)
-- Owen Rosales Castro           - (TEC)
+    In order to get ready with the app, you must: 
+      - Navigate through releases: 
 
 ## :vibration_mode: Gateway / Edge Stage
 <p align="justify">Global Shared Learning: Classroom is an initiative that aims to link a course at the Tecnológico de Monterrey with a course at an associated international university, in this case the Instituto Tecnológico de Aeronáutica (ITA), through an international element, using technological tools to connect with others students, foster collaboration and facilitate learning in multicultural environments.
