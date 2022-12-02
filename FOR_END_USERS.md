@@ -34,13 +34,13 @@ In order to get ready with the app, you must:
 ## :vibration_mode: Gateway / Edge Stage
 In order to start the broker, you must: 
  <ol>
-  <li>Download the <a href="https://github.com/ErnoMitrovic/WebSeekers/releases/download/v1.0.0-beta/app-debug.apk" target="_blank"> mosquitto bridge </a>configuration file</li>
- <li>Download the <a href="https://github.com/ErnoMitrovic/WebSeekers/releases/download/v1.0.0-beta/app-debug.apk" target="_blank"> mosquitto central </a>configuration file </li>
+  <li>Download the <a href="https://github.com/ErnoMitrovic/WebSeekers/releases/download/v1.0.0-beta/mosquitto_bridge.conf" target="_blank"> mosquitto bridge </a>configuration file</li>
+ <li>Download the <a href="https://github.com/ErnoMitrovic/WebSeekers/releases/download/v1.0.0-beta/mosquitto_central.conf" target="_blank"> mosquitto central </a>configuration file </li>
   <li>Start the MQTT service by running the mosquitto with: </li>
  
  ```
- mosquitto -c /etc/mosquitto/mosquitto_central. conf
- mosquitto -c /etc/mosquitto/mosquitto_bridge. conf
+ mosquitto -c /etc/mosquitto/mosquitto_bridge.conf
+ mosquitto -c /etc/mosquitto/mosquitto_central.conf
  ```
  
 </ol>
