@@ -36,7 +36,7 @@ In order to start the broker, you must:
  <ol>
   <li>Download the <a href="https://github.com/ErnoMitrovic/WebSeekers/releases/download/v1.0.0-beta/mosquitto_bridge.conf" target="_blank"> mosquitto bridge </a>configuration file</li>
  <li>Download the <a href="https://github.com/ErnoMitrovic/WebSeekers/releases/download/v1.0.0-beta/mosquitto_central.conf" target="_blank"> mosquitto central </a>configuration file </li>
-  <li>Start the MQTT service by running the mosquitto with: </li>
+  <li>Start the MQTT service by starting the mosquitto with the following commands: </li>
  
  ```
  mosquitto -c /etc/mosquitto/mosquitto_bridge.conf
@@ -46,8 +46,10 @@ In order to start the broker, you must:
 </ol>
 
 ## :cloud: Cloud Stage
-In order to get ready with the app, you must: 
+In order to start the broker, you must: 
  <ol>
-  <li>Navigate through <a href="https://github.com/ErnoMitrovic/WebSeekers/releases" target="_blank"> releases </a></li>
-  <li>Download the <a href="https://github.com/ErnoMitrovic/WebSeekers/releases/download/v1.0.0-beta/app-debug.apk" target="_blank"> .apk </a>into an android device</li>
+  <li>Download the <a href="https://github.com/ErnoMitrovic/WebSeekers/releases/download/v1.0.0-beta/mosquitto_bridge.conf" target="_blank"> Cloud Stage </a>folder</li>
+ <li>Run Python and connect to the localhost</li>
+ <li>Connect to the database named "rescues"</li>
+ <li>Open Grafana</li>
 </ol>
