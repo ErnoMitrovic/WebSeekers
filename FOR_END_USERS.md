@@ -20,16 +20,17 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
 
 <!-- ABOUT THE PROJECT -->
 # 🗂️ HOW TO COMPILE <a name = "about-the-project"></a>
 
 ## :iphone: Client Stage
-<p align="justify">Natural disasters are one of the biggest issues of humankind, we don’t have enough technology to predict these events, yet. But by now, we can use all our efforts to reduce the impact and assure the life of thousands of people. Our goal is to establish a connection between the affected people and the rescue teams to act in the fastest way possible, knowing their location and mapping the users within a certain range, so que can reduce losses and save the most lives we can.</p>
+- Ernesto Miranda Solís         - (TEC)
+- Tania Regina Ramírez Vázquez  - (TEC)
+- José Andrés Rodríguez Ruiz    - (TEC)
+- Victoria Rodríguez de León    - (TEC)
+- Juan Antonio Mancera Velasco  - (TEC)
+- Owen Rosales Castro           - (TEC)
 
 ## :vibration_mode: Gateway / Edge Stage
 <p align="justify">Global Shared Learning: Classroom is an initiative that aims to link a course at the Tecnológico de Monterrey with a course at an associated international university, in this case the Instituto Tecnológico de Aeronáutica (ITA), through an international element, using technological tools to connect with others students, foster collaboration and facilitate learning in multicultural environments.
