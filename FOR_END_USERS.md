@@ -27,8 +27,9 @@
 ## :iphone: Client Stage
 In order to get ready with the app, you must: 
     - Navigate through releases: <a href="https://github.com/ErnoMitrovic/WebSeekers/releases"> For End-Users 
- <ol>
+ <ol>|
   <li>Navigate through <a href="https://github.com/ErnoMitrovic/WebSeekers/releases" target="_blank"> releases </a></li>
+  <li>Download the <a href="https://github.com/ErnoMitrovic/WebSeekers/releases/download/v1.0.0-beta/app-debug.apk" target="_blank"> apk </a></li>
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/REQUIREMENTS.md" target="_blank"> Requirements and Motivation </a></li>
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/USER_STORIES.md" target="_blank"> User Stories </a></li>
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/INTERACTION_DESIGN.md" target="_blank"> Interaction Design </a></li>
