@@ -48,7 +48,7 @@ In order to start the broker, you must:
 ## :cloud: Cloud Stage
 In order to start the broker, you must: 
  <ol>
-  <li>Download the <a href="https://github.com/ErnoMitrovic/WebSeekers/releases/download/v1.0.0-beta/mosquitto_bridge.conf" target="_blank"> Cloud Stage </a>folder</li>
+  <li>Download the <a href="https://github.com/ErnoMitrovic/WebSeekers/tree/main/CloudStage" target="_blank"> Cloud Stage </a>folder</li>
  <li>Run Python and connect to the localhost</li>
  <li>Connect to the database named "rescues"</li>
  <li>Open Grafana</li>
