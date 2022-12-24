@@ -65,6 +65,8 @@ In order to get ready with the app, you must:
   <li>Download the <a href="https://github.com/ErnoMitrovic/WebSeekers/releases/download/v1.0.0-beta/app-debug.apk" target="_blank"> .apk </a>into an android device</li>
 </ol>
 
+There the source code is also available for developers. It is recomended to develop it on Android Studio. 
+
 ## :vibration_mode: Gateway / Edge Stage
 In order to start the broker, you must: 
  <ol>
