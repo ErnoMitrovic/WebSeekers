@@ -35,6 +35,7 @@
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/INTERACTION_DESIGN.md" target="_blank"> Interaction Design </a></li>
   <li><a href="https://github.com/users/ErnoMitrovic/projects/1"> Team Management </li>
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/YOUTUBE_VIDEOS.md"> YouTube Videos </li>
+  <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/WORKSHOP_PRESENTATION.pdf"> Workshop Presentation </li>
   <li><a href="https://github.com/ErnoMitrovic/WebSeekers/blob/main/FOR_END_USERS.md"> For End-Users </li>
 </ol>
 
@@ -80,7 +81,18 @@ For instance, if the local infrastructure is affected and there are no telecommu
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# 🤝🏻 Collaborators <a name = "collaborators"></a>
+## :chart_with_upwards_trend: Technical Architecture
+
+<p align="center" width="100%"><a name = "Technical Architecture" href="https://youtu.be/ZpJ9pTAluqA"><img src="https://github.com/ErnoMitrovic/WebSeekers/blob/main/fig/ArchitectureDiagram.jpg" alt="Technical Architecture" width="65%"></a></p>
+
+## :mag_right: References
+<ol>
+  <li>Ritchie, H., & Roser, M. (2014, June 3). Natural Disasters. Our World in Data. https://ourworldindata.org/natural-disasters#natural-disasters-kill-tens-of-thousands-each-year</li>
+  <li>‌Natural disasters in depth | MSF. (2016). Médecins sans Frontières (MSF) International. https://www.msf.org/natural-disasters-depth</li>
+  <li>kabartsjc. (2022). gsl-iot-2022. https://github.com/kabartsjc/gsl-iot-2022</a></li>
+</ol>
+
+## 🤝🏻 Collaborators <a name = "collaborators"></a>
 
 - Ernesto Miranda Solís         - (TEC)
 - Tania Regina Ramírez Vázquez  - (TEC)
