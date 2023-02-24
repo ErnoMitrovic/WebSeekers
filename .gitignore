@@ -1,3 +1,6 @@
 **/desktop.ini
 **/.replit
 **/replit.nix
+**/__pycache__
+
+**/.idea/**
